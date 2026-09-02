@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Leaf &amp; Bloom</title>
+  <link rel="icon" href="./images/leaf.svg" type="image/svg+xml" />
+  <meta name="description" content="Get in touch with Leaf & Bloom. Book a consultation, request a quote, or simply say hello." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<div id="loader"><div class="loader-logo">Leaf &amp; Bloom</div><div class="loader-line"></div><div class="loader-pct">0%</div></div>
+<div id="cursor-dot"></div>
+<div id="cursor-outline"></div>
+<div id="scroll-progress"></div>
+<div class="page-transition"></div>
+<div id="toast-container"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="./images/leaf.png" alt="" class="nav-logo-img" aria-hidden="true">Leaf &amp; Bloom <span class="logo-dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Shop</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
+    <button class="btn-cart" aria-label="Open cart">
+      <i class="fa-solid fa-basket-shopping"></i><span>Cart</span>
+      <span class="cart-badge hidden">0</span>
+    </button>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-overlay"></div>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Shop</a>
+  <a href="services.html">Services</a><a href="contact.html" class="active">Contact</a><a href="feedback.html">Feedback</a>
+  <div class="mobile-nav-footer"><button class="btn-cart-mobile btn-cart"><i class="fa-solid fa-basket-shopping"></i> View Cart <span class="cart-badge hidden">0</span></button></div>
+</nav>
+
+<div class="cart-drawer-overlay"></div>
+<aside id="cart-drawer">
+  <div class="cart-drawer-header"><div class="cart-drawer-title">Your Cart</div><button class="cart-close">✕</button></div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-summary-row"><span class="cart-summary-label">Subtotal</span><span class="cart-summary-val cart-subtotal-val">₱0</span></div>
+    <div class="cart-summary-row"><span class="cart-summary-label">Shipping</span><span class="cart-summary-val cart-shipping-val">₱150</span></div>
+    <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-val">₱0</span></div>
+    <div class="cart-cta-wrap">
+      <button class="btn btn-outline btn-to-checkout">Checkout</button>
+      <a href="checkout.html" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="btn-clear-cart">Clear Cart</button>
+  </div>
+</aside>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<a id="whatsapp-btn" href="https://wa.me/639171234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+      <p class="section-label reveal">Reach Out</p>
+      <h1 class="page-header-title reveal delay-1">Let's <em>Connect</em></h1>
+      <p class="section-sub reveal delay-2">Whether you have a question, a vision, or just want to say hello — we'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="reveal-left">
+          <p class="section-label">Find Us</p>
+          <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.5rem);">We're <em>Here</em><br>for You</h2>
+          <p class="section-sub" style="max-width:100%;margin:1rem 0 2rem">Our team is available Monday to Saturday, 9AM–6PM. We typically respond to all enquiries within 24 hours.</p>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-info-label">Studio Address</div>
+              <div class="contact-info-val">Buhisan, Dulhugan, Cebu City, Philippines</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-info-label">Phone / WhatsApp</div>
+              <div class="contact-info-val"><a href="tel:+639171234567" style="color:var(--clr-text)">+63 917 123 4567</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-val"><a href="mailto:hello@leafandbloom.ph" style="color:var(--clr-text)">hello@leafandbloom.ph</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item" style="border:none">
+            <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div class="contact-info-label">Hours</div>
+              <div class="contact-info-val">Monday – Saturday, 9:00 AM – 6:00 PM</div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://ph.pinterest.com/artiagajohnnel05/" target="_blank" rel="noopener" class="social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.tiktok.com/@callmeweird06" target="_blank" rel="noopener" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/639171234567" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+
+          <div class="map-embed" aria-label="Map showing studio location">
+            <iframe
+              src="https://maps.google.com/maps?q=Buhisan+Cebu+City+Philippines&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              title="Leaf & Bloom Studio Location"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal-right">
+          <div class="contact-form-wrap">
+            <p class="section-label" style="margin-bottom:1.5rem;">Send a Message</p>
+            <form id="contact-form" novalidate aria-label="Contact form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Full Name <span style="color:#C0544D">*</span></label>
+                  <input type="text" id="contact-name" name="name" placeholder="Your full name" required autocomplete="name" />
+                  <span class="form-error">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address <span style="color:#C0544D">*</span></label>
+                  <input type="email" id="contact-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+                  <span class="form-error">Please enter a valid email</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" name="phone" placeholder="+63 9XX XXX XXXX" autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-service">Service Enquiry</label>
+                  <select id="contact-service" name="service">
+                    <option value="">Select a service…</option>
+                    <option>Floral Arrangements</option>
+                    <option>Wedding &amp; Events</option>
+                    <option>Plant Consultation</option>
+                    <option>Plant Subscription</option>
+                    <option>Corporate Styling</option>
+                    <option>General Enquiry</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject <span style="color:#C0544D">*</span></label>
+                <input type="text" id="contact-subject" name="subject" placeholder="How can we help?" required />
+                <span class="form-error">Please enter a subject</span>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message <span style="color:#C0544D">*</span></label>
+                <textarea id="contact-message" name="message" placeholder="Tell us about your project, event, or question…" required></textarea>
+                <span class="form-error">Please enter your message</span>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                Send Message <i class="fa-solid fa-paper-plane" style="margin-left:0.5rem;"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <p class="section-label reveal" style="justify-content:center">Common Questions</p>
+        <h2 class="section-title reveal delay-1">Frequently <em>Asked</em></h2>
+      </div>
+      <div style="max-width:720px;margin:0 auto;" class="reveal delay-2">
+        <div class="faq-item" style="border-bottom:1px solid var(--clr-border);padding:1.25rem 0;">
+          <button class="faq-btn" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;font-family:var(--font-display);font-size:1.1rem;color:var(--clr-text);text-align:left;padding:0;">
+            Do you deliver outside Cebu City?
+            <i class="fa-solid fa-plus faq-icon" style="color:var(--clr-primary);transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+          </button>
+          <div class="faq-answer" style="display:none;padding-top:0.75rem;font-size:0.9rem;color:var(--clr-text-mid);line-height:1.75;">Yes! We deliver islandwide across the Philippines. Shipping rates and lead times vary by location — contact us for a quote specific to your area.</div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid var(--clr-border);padding:1.25rem 0;">
+          <button class="faq-btn" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;font-family:var(--font-display);font-size:1.1rem;color:var(--clr-text);text-align:left;padding:0;">
+            How far in advance should I book for a wedding?
+            <i class="fa-solid fa-plus faq-icon" style="color:var(--clr-primary);transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+          </button>
+          <div class="faq-answer" style="display:none;padding-top:0.75rem;font-size:0.9rem;color:var(--clr-text-mid);line-height:1.75;">We recommend booking at least 3–6 months in advance for weddings, especially for peak season dates (November–February). However, we do accommodate shorter timelines when possible — reach out and we'll do our best!</div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid var(--clr-border);padding:1.25rem 0;">
+          <button class="faq-btn" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;font-family:var(--font-display);font-size:1.1rem;color:var(--clr-text);text-align:left;padding:0;">
+            What if my plant arrives damaged?
+            <i class="fa-solid fa-plus faq-icon" style="color:var(--clr-primary);transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+          </button>
+          <div class="faq-answer" style="display:none;padding-top:0.75rem;font-size:0.9rem;color:var(--clr-text-mid);line-height:1.75;">We stand behind every plant we send. If your order arrives damaged, simply send us a photo within 48 hours of delivery and we'll arrange a replacement or refund — no questions asked.</div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid var(--clr-border);padding:1.25rem 0;">
+          <button class="faq-btn" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;font-family:var(--font-display);font-size:1.1rem;color:var(--clr-text);text-align:left;padding:0;">
+            Can I customise my subscription box?
+            <i class="fa-solid fa-plus faq-icon" style="color:var(--clr-primary);transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+          </button>
+          <div class="faq-answer" style="display:none;padding-top:0.75rem;font-size:0.9rem;color:var(--clr-text-mid);line-height:1.75;">Absolutely! Collector-tier subscribers receive a fully personalised curation. All subscribers can share preferences (indoor/outdoor, light levels, pet-friendly) that guide our selections each month.</div>
+        </div>
+        <div class="faq-item" style="padding:1.25rem 0;">
+          <button class="faq-btn" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;font-family:var(--font-display);font-size:1.1rem;color:var(--clr-text);text-align:left;padding:0;">
+            Do you offer gift cards or gift wrapping?
+            <i class="fa-solid fa-plus faq-icon" style="color:var(--clr-primary);transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+          </button>
+          <div class="faq-answer" style="display:none;padding-top:0.75rem;font-size:0.9rem;color:var(--clr-text-mid);line-height:1.75;">Yes to both! All orders can be gift-wrapped in our signature packaging (add a note at checkout). Digital gift cards are available starting at ₱500 — contact us to arrange one.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Leaf &amp; Bloom</div>
+        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into your home, workplace, and most treasured moments.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://ph.pinterest.com/artiagajohnnel05/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
+      <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
+      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const icon = btn.querySelector('.faq-icon');
+    const isOpen = answer.style.display === 'block';
+    // Close all
+    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+    document.querySelectorAll('.faq-btn').forEach(b => { b.setAttribute('aria-expanded','false'); b.querySelector('.faq-icon').style.transform = ''; });
+    // Open clicked
+    if (!isOpen) {
+      answer.style.display = 'block';
+      btn.setAttribute('aria-expanded', 'true');
+      icon.style.transform = 'rotate(45deg)';
+    }
+  });
+});
+</script>
+</body>
+</html>

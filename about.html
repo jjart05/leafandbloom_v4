@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Leaf &amp; Bloom</title>
+  <link rel="icon" href="./images/leaf.svg" type="image/svg+xml" />
+  <meta name="description" content="Learn the story behind Leaf & Bloom — a luxury botanical studio born from a love of nature, artistry, and living beauty." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<div id="loader"><div class="loader-logo">Leaf &amp; Bloom</div><div class="loader-line"></div><div class="loader-pct">0%</div></div>
+<div id="cursor-dot"></div>
+<div id="cursor-outline"></div>
+<div id="scroll-progress"></div>
+<div class="page-transition"></div>
+<div id="toast-container"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="./images/leaf.png" alt="" class="nav-logo-img" aria-hidden="true">Leaf &amp; Bloom <span class="logo-dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="products.html">Shop</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
+    <button class="btn-cart" aria-label="Open cart">
+      <i class="fa-solid fa-basket-shopping"></i><span>Cart</span>
+      <span class="cart-badge hidden">0</span>
+    </button>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-overlay"></div>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="products.html">Shop</a>
+  <a href="services.html">Services</a><a href="contact.html">Contact</a><a href="feedback.html">Feedback</a>
+  <div class="mobile-nav-footer"><button class="btn-cart-mobile btn-cart"><i class="fa-solid fa-basket-shopping"></i> View Cart <span class="cart-badge hidden">0</span></button></div>
+</nav>
+
+<div class="cart-drawer-overlay"></div>
+<aside id="cart-drawer">
+  <div class="cart-drawer-header"><div class="cart-drawer-title">Your Cart</div><button class="cart-close">✕</button></div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-summary-row"><span class="cart-summary-label">Subtotal</span><span class="cart-summary-val cart-subtotal-val">₱0</span></div>
+    <div class="cart-summary-row"><span class="cart-summary-label">Shipping</span><span class="cart-summary-val cart-shipping-val">₱150</span></div>
+    <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-val">₱0</span></div>
+    <div class="cart-cta-wrap">
+      <button class="btn btn-outline btn-to-checkout">Checkout</button>
+      <a href="checkout.html" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="btn-clear-cart">Clear Cart</button>
+  </div>
+</aside>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<a id="whatsapp-btn" href="https://wa.me/639171234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<main>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span><span>About</span>
+      </div>
+      <p class="section-label reveal">Our Story</p>
+      <h1 class="page-header-title reveal delay-1">Rooted in <em>Passion</em>,<br>Grown with Care</h1>
+      <p class="section-sub reveal delay-2">From a small balcony garden to a full botanical studio — this is the story of Leaf &amp; Bloom.</p>
+    </div>
+  </section>
+
+  <!-- Hero Image -->
+  <section class="section-sm">
+  <div class="container">
+    <video class="about-hero-img reveal" autoplay muted loop playsinline preload="auto">
+      <source src="./images/hero.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
+  <!-- Brand Story -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="split">
+        <div class="reveal-left">
+          <p class="section-label">The Beginning</p>
+          <h2 class="section-title">Born from a <em>Garden</em></h2>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">In 2018, our founder Johnnel Artiaga transformed his passion for rare botanicals into a curated studio tucked in the heart of Cebu City. What began as hand-delivering lovingly potted plants to neighbours quickly blossomed into something extraordinary.</p>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">Today, Leaf &amp; Bloom is a full-service botanical studio serving clients across the Philippines — from intimate home collections to grand corporate biophilic installations and once-in-a-lifetime weddings.</p>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">Every plant we carry has a story. Every arrangement we create is a piece of living art. We believe that surrounding yourself with nature is one of the greatest luxuries in the world.</p>
+        </div>
+        <div class="split-img reveal-right">
+          <img src="./images/me.jpg" alt="Johnnel Artiaga, Founder"
+            onerror="this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80'" />
+          <div class="split-img-accent">
+            <p>Johnnel</p>
+            <span>Founder &amp; Lead Botanist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section">
+    <div class="container">
+      <div class="mission-header">
+        <p class="section-label reveal" style="justify-content:center">Our Purpose</p>
+        <h2 class="section-title reveal delay-1">Mission &amp; <em>Vision</em></h2>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-card reveal delay-1">
+          <div class="mission-icon">🎯</div>
+          <h3 class="mission-title">Our Mission</h3>
+          <p class="mission-text">To make the extraordinary beauty of the botanical world accessible — delivering premium plants and floral artistry that transform any space into a living sanctuary.</p>
+        </div>
+        <div class="mission-card reveal delay-2">
+          <div class="mission-icon">🌱</div>
+          <h3 class="mission-title">Our Vision</h3>
+          <p class="mission-text">To be the Philippines' most celebrated luxury botanical studio — inspiring homes, workplaces, and celebrations through timeless botanical artistry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <p class="section-label reveal" style="justify-content:center">What Drives Us</p>
+        <h2 class="section-title reveal delay-1">Our <em>Values</em></h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal delay-1">
+          <div class="value-icon">✨</div>
+          <h3 class="value-title">Uncompromising Quality</h3>
+          <p class="value-text">Every plant is inspected. Every arrangement is crafted. We never settle for anything less than extraordinary.</p>
+        </div>
+        <div class="value-card reveal delay-2">
+          <div class="value-icon">🌍</div>
+          <h3 class="value-title">Sustainable Sourcing</h3>
+          <p class="value-text">We partner only with responsible growers and use eco-conscious packaging throughout our operations.</p>
+        </div>
+        <div class="value-card reveal delay-3">
+          <div class="value-icon">💚</div>
+          <h3 class="value-title">Plant-First Philosophy</h3>
+          <p class="value-text">We are passionate botanists first and foremost — every decision is guided by what's best for our living products.</p>
+        </div>
+        <div class="value-card reveal delay-4">
+          <div class="value-icon">🤝</div>
+          <h3 class="value-title">Client Partnership</h3>
+          <p class="value-text">We listen deeply and work closely with each client to create something that is uniquely theirs.</p>
+        </div>
+        <div class="value-card reveal delay-5">
+          <div class="value-icon">🎨</div>
+          <h3 class="value-title">Creative Excellence</h3>
+          <p class="value-text">We approach every project as an artistic endeavour — with originality, intention, and beauty at the core.</p>
+        </div>
+        <div class="value-card reveal delay-6">
+          <div class="value-icon">🚀</div>
+          <h3 class="value-title">Continuous Growth</h3>
+          <p class="value-text">Like the plants we tend, we are always learning, growing, and reaching toward the light.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <p class="section-label reveal" style="justify-content:center">The People</p>
+        <h2 class="section-title reveal delay-1">Meet the <em>Team</em></h2>
+        <p class="section-sub reveal delay-2" style="margin:1rem auto 0">A passionate collective of botanists, floral artists, and creative thinkers.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal delay-1">
+          <img class="team-img" src="./images/me.jpg" alt="Johnnel Artiaga"
+            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80'" />
+          <h3 class="team-name">Johnnel Artiaga</h3>
+          <p class="team-role">Founder &amp; Lead Botanist</p>
+        </div>
+        <div class="team-card reveal delay-2">
+          <img class="team-img" src="./images/dave.jpg" alt="Dave Del Rosario"
+            onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80'" />
+          <h3 class="team-name">Dave Del Rosario</h3>
+          <p class="team-role">Head Floral Designer</p>
+        </div>
+        <div class="team-card reveal delay-3">
+          <img class="team-img" src="./images/arj1.jpg" alt="R-Jyn Pantilag"
+            onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=80'" />
+          <h3 class="team-name">R-Jyn Pantilag</h3>
+          <p class="team-role">Wedding Specialist</p>
+        </div>
+        <div class="team-card reveal delay-4">
+          <img class="team-img" src="./images/iyan.jpg" alt="Christian Orique"
+            onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80'" />
+          <h3 class="team-name">Christian Orique</h3>
+          <p class="team-role">Plant Care Expert</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="newsletter reveal" style="background:linear-gradient(135deg,var(--clr-accent) 0%,#8a6340 100%)">
+        <div class="newsletter-inner">
+          <h2 class="newsletter-title">Ready to Elevate Your Space?</h2>
+          <p class="newsletter-sub">Let's create something beautiful together. Book a consultation or explore our collections.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="products.html" class="btn" style="background:#fff;color:var(--clr-accent);">Browse Shop</a>
+            <a href="contact.html" class="btn" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4)">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Leaf &amp; Bloom</div>
+        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into your home, workplace, and most treasured moments.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://ph.pinterest.com/artiagajohnnel05/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
+      <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
+      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+</body>
+</html>

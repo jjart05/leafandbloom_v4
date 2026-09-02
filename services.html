@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Leaf &amp; Bloom</title>
+  <link rel="icon" href="./images/leaf.svg" type="image/svg+xml" />
+  <meta name="description" content="Explore our premium botanical services: floral arrangements, wedding styling, plant consultations, subscriptions, and corporate biophilic design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<div id="loader"><div class="loader-logo">Leaf &amp; Bloom</div><div class="loader-line"></div><div class="loader-pct">0%</div></div>
+<div id="cursor-dot"></div>
+<div id="cursor-outline"></div>
+<div id="scroll-progress"></div>
+<div class="page-transition"></div>
+<div id="toast-container"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="./images/leaf.png" alt="" class="nav-logo-img" aria-hidden="true">Leaf &amp; Bloom <span class="logo-dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Shop</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
+    <button class="btn-cart" aria-label="Open cart">
+      <i class="fa-solid fa-basket-shopping"></i><span>Cart</span>
+      <span class="cart-badge hidden">0</span>
+    </button>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-overlay"></div>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Shop</a>
+  <a href="services.html" class="active">Services</a><a href="contact.html">Contact</a><a href="feedback.html">Feedback</a>
+  <div class="mobile-nav-footer"><button class="btn-cart-mobile btn-cart"><i class="fa-solid fa-basket-shopping"></i> View Cart <span class="cart-badge hidden">0</span></button></div>
+</nav>
+
+<div class="cart-drawer-overlay"></div>
+<aside id="cart-drawer">
+  <div class="cart-drawer-header"><div class="cart-drawer-title">Your Cart</div><button class="cart-close">✕</button></div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-summary-row"><span class="cart-summary-label">Subtotal</span><span class="cart-summary-val cart-subtotal-val">₱0</span></div>
+    <div class="cart-summary-row"><span class="cart-summary-label">Shipping</span><span class="cart-summary-val cart-shipping-val">₱150</span></div>
+    <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-val">₱0</span></div>
+    <div class="cart-cta-wrap">
+      <button class="btn btn-outline btn-to-checkout">Checkout</button>
+      <a href="checkout.html" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="btn-clear-cart">Clear Cart</button>
+  </div>
+</aside>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<a id="whatsapp-btn" href="https://wa.me/639171234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<main>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Services</span></div>
+      <p class="section-label reveal">What We Do</p>
+      <h1 class="page-header-title reveal delay-1">Botanical <em>Services</em></h1>
+      <p class="section-sub reveal delay-2">From a single bloom to an entire venue — we bring living beauty to life.</p>
+    </div>
+  </section>
+
+  <!-- Services Overview Grid -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <p class="section-label reveal" style="justify-content:center">Our Expertise</p>
+        <h2 class="section-title reveal delay-1">Everything <em>Botanical</em></h2>
+        <p class="section-sub reveal delay-2" style="margin:1rem auto 0">Six specialised services to transform your space, your event, and your everyday life.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal delay-1">
+          <div class="service-icon">🌸</div>
+          <h3 class="service-title">Floral Arrangements</h3>
+          <p class="service-desc">Bespoke arrangements crafted from the season's finest blooms — from minimalist elegance to abundant opulence. Every piece is designed to tell your unique story.</p>
+          <a href="contact.html" class="service-link btn-book-service" data-service="Floral Arrangements">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal delay-2">
+          <div class="service-icon">💍</div>
+          <h3 class="service-title">Wedding &amp; Events</h3>
+          <p class="service-desc">Transforming your special moments with breathtaking botanical installations and bespoke floral design. We handle everything from consultation to day-of execution.</p>
+          <a href="contact.html" class="service-link btn-book-service" data-service="Wedding & Events">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal delay-3">
+          <div class="service-icon">🌿</div>
+          <h3 class="service-title">Plant Consultations</h3>
+          <p class="service-desc">Expert guidance on plant selection, placement, and care — personalised to your space and lifestyle. We'll help you build a thriving indoor garden.</p>
+          <a href="contact.html" class="service-link btn-book-service" data-service="Plant Consultation">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal delay-4">
+          <div class="service-icon">📦</div>
+          <h3 class="service-title">Plant Subscriptions</h3>
+          <p class="service-desc">Monthly deliveries of curated botanicals. Discover rare and seasonal varieties chosen just for you, with personalised care guides included.</p>
+          <a href="#pricing" class="service-link">View Plans <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal delay-5">
+          <div class="service-icon">🚚</div>
+          <h3 class="service-title">Premium Delivery</h3>
+          <p class="service-desc">White-glove delivery with careful packaging ensuring every plant arrives in perfect condition. Available islandwide across the Philippines.</p>
+          <a href="contact.html" class="service-link">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal delay-6">
+          <div class="service-icon">🏢</div>
+          <h3 class="service-title">Corporate Styling</h3>
+          <p class="service-desc">Biophilic workplace design that enhances productivity, creativity, and employee wellbeing. Includes installation, maintenance, and regular refreshes.</p>
+          <a href="contact.html" class="service-link btn-book-service" data-service="Corporate Styling">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floral Arrangements Detail -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="split">
+        <div class="split-img reveal-left">
+          <img src="https://plus.unsplash.com/premium_photo-1674581211991-bd10fa5137bf?q=80&w=880&auto=format&fit=crop" alt="Luxury floral arrangement" />
+        </div>
+        <div class="reveal-right">
+          <p class="section-label">Signature Service</p>
+          <h2 class="section-title">Artisan <em>Florals</em></h2>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">Every arrangement begins with a conversation. We learn your aesthetic, your space, and the emotion you want to evoke — then we get to work with the finest blooms available.</p>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">From a single stem in a bud vase to an extravagant seasonal display, our floral artists bring botanical poetry to life.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;">
+            <div style="padding:1.25rem;background:var(--clr-surface);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+              <div style="font-size:1.4rem;margin-bottom:0.5rem;">🌺</div>
+              <div style="font-family:var(--font-display);font-size:1rem;margin-bottom:0.25rem;">Seasonal Blooms</div>
+              <div style="font-size:0.78rem;color:var(--clr-text-mid);">Always fresh, always in season</div>
+            </div>
+            <div style="padding:1.25rem;background:var(--clr-surface);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+              <div style="font-size:1.4rem;margin-bottom:0.5rem;">✂️</div>
+              <div style="font-family:var(--font-display);font-size:1rem;margin-bottom:0.25rem;">Hand-Crafted</div>
+              <div style="font-size:0.78rem;color:var(--clr-text-mid);">Every stem placed with intention</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;" onclick="window.scrollTo(0,0)">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:4rem;">
+        <p class="section-label reveal" style="justify-content:center">Simple Process</p>
+        <h2 class="section-title reveal delay-1">How It <em>Works</em></h2>
+        <p class="section-sub reveal delay-2" style="margin:1rem auto 0">From first enquiry to delivery at your door — our process is designed to be effortless.</p>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <h3 class="process-title">Consultation</h3>
+          <p class="process-text">Tell us about your vision, space, and budget. We'll guide you to the perfect botanical solution.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <h3 class="process-title">Curation</h3>
+          <p class="process-text">Our botanists handpick the finest specimens or blooms — sourced from trusted growers.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <h3 class="process-title">Creation</h3>
+          <p class="process-text">Our artists craft your order with meticulous attention to detail and care.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <h3 class="process-title">Delivery</h3>
+          <p class="process-text">White-glove delivery to your door — beautifully packaged and ready to display.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Pricing -->
+  <section class="section bg-cream" id="pricing">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <p class="section-label reveal" style="justify-content:center">Subscription Plans</p>
+        <h2 class="section-title reveal delay-1">Monthly <em>Botanicals</em></h2>
+        <p class="section-sub reveal delay-2" style="margin:1rem auto 0">Choose a plan and receive a curated botanical delivery every month — pause or cancel anytime.</p>
+      </div>
+      <div class="pricing-grid">
+
+        <div class="pricing-card reveal delay-1">
+          <div class="pricing-plan">Starter</div>
+          <div class="pricing-price">₱990</div>
+          <div class="pricing-period">per month</div>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> 1 curated plant/month</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Care guide included</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Standard packaging</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Monthly newsletter</li>
+            <li class="pricing-feature" style="opacity:0.35;"><i class="fa-solid fa-xmark"></i> Priority access</li>
+            <li class="pricing-feature" style="opacity:0.35;"><i class="fa-solid fa-xmark"></i> Botanical styling tips</li>
+          </ul>
+          <button class="btn btn-outline btn-book-service" data-service="Starter Subscription" style="width:100%;justify-content:center;">Get Started</button>
+        </div>
+ 
+        <div class="pricing-card featured reveal delay-2">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-plan">Bloom</div>
+          <div class="pricing-price">₱1,890</div>
+          <div class="pricing-period">per month</div>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> 2–3 curated plants/month</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Care guide included</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Premium gift packaging</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Priority new arrivals</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Botanical styling tips</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> 10% shop discount</li>
+          </ul>
+          <button class="btn btn-gold btn-book-service" data-service="Bloom Subscription" style="width:100%;justify-content:center;background:var(--clr-accent);">Subscribe Now</button>
+        </div>
+
+        <div class="pricing-card reveal delay-3">
+          <div class="pricing-plan">Collector</div>
+          <div class="pricing-price">₱3,490</div>
+          <div class="pricing-period">per month</div>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> 4–5 plants + rare finds</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Personalised selection</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> Luxury presentation box</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> First access to rare stock</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> 1:1 plant consultation</li>
+            <li class="pricing-feature"><i class="fa-solid fa-check"></i> 20% shop discount</li>
+          </ul>
+          <button class="btn btn-outline btn-book-service" data-service="Collector Subscription" style="width:100%;justify-content:center;">Get Started</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Section -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="reveal-left">
+          <p class="section-label">For Business</p>
+          <h2 class="section-title">Corporate <em>Biophilic</em> Design</h2>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">Research consistently shows that plants in the workplace improve focus, reduce stress, and boost creativity. Our corporate clients see measurable improvements in employee satisfaction and client impressions.</p>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">We handle everything — from initial consultation and installation to ongoing maintenance and regular seasonal refreshes. Your team can focus on what they do best while we keep your space flourishing.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+            <a href="contact.html" class="btn btn-primary">Request Proposal</a>
+            <a href="contact.html" class="btn btn-outline">Book a Site Visit</a>
+          </div>
+        </div>
+        <div class="split-img reveal-right">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Biophilic office design" />
+          <div class="split-img-accent">
+            <p>15%</p>
+            <span>Avg. Productivity Increase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="newsletter reveal">
+        <div class="newsletter-inner">
+          <p style="font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">Ready to Begin?</p>
+          <h2 class="newsletter-title">Let's Create Something Beautiful</h2>
+          <p class="newsletter-sub">Reach out today and our team will get back to you within 24 hours with a personalised botanical proposal.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn" style="background:var(--clr-accent);color:#fff;border:none;">Get a Free Quote</a>
+            <a href="products.html" class="btn" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);">Browse Shop</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Leaf &amp; Bloom</div>
+        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into your home, workplace, and most treasured moments.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://ph.pinterest.com/artiagajohnnel05/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
+      <div><p class="footer-heading">Services</p><ul class="footer-links"><li><a href="services.html">Floral Arrangements</a></li><li><a href="services.html">Wedding &amp; Events</a></li><li><a href="services.html">Plant Consultations</a></li><li><a href="services.html#pricing">Subscriptions</a></li><li><a href="services.html">Corporate Styling</a></li></ul></div>
+      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+</body>
+</html>

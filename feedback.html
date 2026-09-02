@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback — Leaf &amp; Bloom</title>
+  <link rel="icon" href="./images/leaf.svg" type="image/svg+xml" />
+  <meta name="description" content="Share your feedback about Leaf & Bloom. We'd love to hear your thoughts and suggestions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    /* Feedback-specific styles */
+    .feedback-wrap { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: 2.5rem; box-sizing: border-box; width: 100%; overflow: hidden; }
+    .star-rating { display: flex; gap: 0.4rem; margin: 0.75rem 0 1rem; }
+    .star-btn { background: none; border: none; font-size: 2rem; color: var(--clr-border); line-height: 1; transition: color 0.15s, transform 0.15s; }
+    .star-btn.active, .star-btn:hover { color: var(--clr-accent); transform: scale(1.1); }
+    .star-hint { font-size: 0.82rem; color: var(--clr-accent); font-style: italic; min-height: 1.2em; display: block; margin-bottom: 1rem; }
+    .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .checkbox-item { display: flex; align-items: center; gap: 0.5rem; }
+    .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--clr-primary); cursor: pointer; }
+    .checkbox-item label { font-size: 0.85rem; color: var(--clr-text-mid); cursor: pointer; }
+    .rating-summary { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .rating-bar-bg { height: 6px; background: var(--clr-bg-2); border-radius: 99px; overflow: hidden; }
+    .rating-bar-fill { height: 100%; background: var(--clr-accent); border-radius: 99px; transition: width 0.6s var(--ease-smooth); }
+    .overall-score { font-family: var(--font-display); font-size: 4rem; font-weight: 300; color: var(--clr-primary); line-height: 1; }
+    @media (max-width:600px) { .checkbox-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div id="loader"><div class="loader-logo">Leaf &amp; Bloom</div><div class="loader-line"></div><div class="loader-pct">0%</div></div>
+<div id="cursor-dot"></div>
+<div id="cursor-outline"></div>
+<div id="scroll-progress"></div>
+<div class="page-transition"></div>
+<div id="toast-container"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="./images/leaf.png" alt="" class="nav-logo-img" aria-hidden="true">Leaf &amp; Bloom <span class="logo-dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Shop</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="feedback.html" class="active">Feedback</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
+    <button class="btn-cart" aria-label="Open cart">
+      <i class="fa-solid fa-basket-shopping"></i><span>Cart</span>
+      <span class="cart-badge hidden">0</span>
+    </button>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-overlay"></div>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Shop</a>
+  <a href="services.html">Services</a><a href="contact.html">Contact</a><a href="feedback.html" class="active">Feedback</a>
+  <div class="mobile-nav-footer"><button class="btn-cart-mobile btn-cart"><i class="fa-solid fa-basket-shopping"></i> View Cart <span class="cart-badge hidden">0</span></button></div>
+</nav>
+
+<div class="cart-drawer-overlay"></div>
+<aside id="cart-drawer">
+  <div class="cart-drawer-header"><div class="cart-drawer-title">Your Cart</div><button class="cart-close">✕</button></div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-summary-row"><span class="cart-summary-label">Subtotal</span><span class="cart-summary-val cart-subtotal-val">₱0</span></div>
+    <div class="cart-summary-row"><span class="cart-summary-label">Shipping</span><span class="cart-summary-val cart-shipping-val">₱150</span></div>
+    <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-val">₱0</span></div>
+    <div class="cart-cta-wrap">
+      <button class="btn btn-outline btn-to-checkout">Checkout</button>
+      <a href="checkout.html" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="btn-clear-cart">Clear Cart</button>
+  </div>
+</aside>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<a id="whatsapp-btn" href="https://wa.me/639171234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Feedback</span></div>
+      <p class="section-label reveal">Your Opinion Matters</p>
+      <h1 class="page-header-title reveal delay-1">Rate My <em>Project</em></h1>
+      <p class="section-sub reveal delay-2">Help us grow by sharing your honest thoughts. Your feedback is genuinely valued.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="feedback-grid">
+
+        <!-- Feedback Form -->
+        <div class="reveal-left">
+          <div class="feedback-wrap">
+            <p class="section-label" style="margin-bottom:1.5rem;">Leave a Review</p>
+            <form id="feedback-form" name="leaf-bloom-feedback" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate aria-label="Feedback form">
+              <input type="hidden" name="form-name" value="leaf-bloom-feedback" />
+              <input type="hidden" name="bot-field" style="display:none;" />
+              <input type="hidden" id="rating-val" name="rating" value="0" />
+
+              <!-- Star Rating -->
+              <div class="form-group" style="margin-bottom:1.5rem;">
+                <label style="font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-text-mid);">
+                  Overall Rating <span style="color:#C0544D">*</span>
+                </label>
+                <div class="star-rating" role="radiogroup" aria-label="Rate from 1 to 5 stars">
+                  <button type="button" class="star-btn" data-val="1" aria-label="1 star">★</button>
+                  <button type="button" class="star-btn" data-val="2" aria-label="2 stars">★</button>
+                  <button type="button" class="star-btn" data-val="3" aria-label="3 stars">★</button>
+                  <button type="button" class="star-btn" data-val="4" aria-label="4 stars">★</button>
+                  <button type="button" class="star-btn" data-val="5" aria-label="5 stars">★</button>
+                </div>
+                <span class="star-hint" aria-live="polite" id="star-hint-text"></span>
+              </div>
+
+              <!-- Name & Email -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="feedback-name">Your Name <span style="color:#C0544D">*</span></label>
+                  <input type="text" id="feedback-name" name="name" placeholder="First name" required autocomplete="given-name" />
+                  <span class="form-error">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                  <label for="feedback-email">Email <span style="color:var(--clr-text-lt);font-weight:300;text-transform:none;letter-spacing:0;">(optional)</span></label>
+                  <input type="email" id="feedback-email" name="email" placeholder="your@email.com" autocomplete="email" />
+                </div>
+              </div>
+
+              <!-- Improvements -->
+              <div class="form-group">
+                <label style="margin-bottom:0.75rem;display:block;">What Could Be Improved?
+                  <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:0.72rem;color:var(--clr-text-lt);margin-left:0.4rem;">(select all that apply)</span>
+                </label>
+                <div class="checkbox-grid">
+                  <div class="checkbox-item"><input type="checkbox" id="cb-design" name="improvements" value="Design/UI"><label for="cb-design">🎨 Design / UI</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-nav" name="improvements" value="Navigation"><label for="cb-nav">🧭 Navigation</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-perf" name="improvements" value="Performance"><label for="cb-perf">⚡ Performance</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-features" name="improvements" value="Features"><label for="cb-features">✨ Features</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-content" name="improvements" value="Content"><label for="cb-content">📝 Content</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-mobile" name="improvements" value="Mobile Experience"><label for="cb-mobile">📱 Mobile</label></div>
+                </div>
+              </div>
+
+              <!-- Comment -->
+              <div class="form-group">
+                <label for="feedback-comment">Your Review <span style="color:#C0544D">*</span></label>
+                <textarea id="feedback-comment" name="comment" placeholder="Share your honest thoughts about the website, products, or experience…" required style="min-height:120px;"></textarea>
+                <span class="form-error">Please share your thoughts</span>
+              </div>
+
+              <!-- Would Recommend -->
+              <div class="form-group" style="margin-bottom:1.5rem;">
+                <label style="margin-bottom:0.75rem;display:block;">Would you recommend us?</label>
+                <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+                  <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--clr-text-mid);cursor:pointer;">
+                    <input type="radio" name="recommend" value="yes" style="accent-color:var(--clr-primary);cursor:pointer;" /> Yes, definitely!
+                  </label>
+                  <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--clr-text-mid);cursor:pointer;">
+                    <input type="radio" name="recommend" value="maybe" style="accent-color:var(--clr-primary);cursor:pointer;" /> Maybe
+                  </label>
+                  <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--clr-text-mid);cursor:pointer;">
+                    <input type="radio" name="recommend" value="no" style="accent-color:var(--clr-primary);cursor:pointer;" /> Not yet
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                Submit Review <i class="fa-solid fa-star" style="margin-left:0.5rem;"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Reviews Panel -->
+        <div class="reveal-right">
+
+          <!-- Rating Summary -->
+          <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:2rem;margin-bottom:1.5rem;">
+            <p class="section-label" style="margin-bottom:1.25rem;">Overall Rating</p>
+            <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;">
+              <div class="overall-score">4.9</div>
+              <div>
+                <div style="color:var(--clr-accent);font-size:1.1rem;letter-spacing:3px;margin-bottom:0.25rem;">★★★★★</div>
+                <div style="font-size:0.8rem;color:var(--clr-text-lt);">Based on all reviews</div>
+              </div>
+            </div>
+            <div>
+              <div class="rating-summary"><span style="font-size:0.78rem;color:var(--clr-text-mid);">5 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:88%"></div></div><span style="font-size:0.78rem;color:var(--clr-text-lt);">88%</span></div>
+              <div class="rating-summary"><span style="font-size:0.78rem;color:var(--clr-text-mid);">4 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:8%"></div></div><span style="font-size:0.78rem;color:var(--clr-text-lt);">8%</span></div>
+              <div class="rating-summary"><span style="font-size:0.78rem;color:var(--clr-text-mid);">3 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:4%"></div></div><span style="font-size:0.78rem;color:var(--clr-text-lt);">4%</span></div>
+              <div class="rating-summary"><span style="font-size:0.78rem;color:var(--clr-text-mid);">2 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:0%"></div></div><span style="font-size:0.78rem;color:var(--clr-text-lt);">0%</span></div>
+              <div class="rating-summary"><span style="font-size:0.78rem;color:var(--clr-text-mid);">1 ★</span><div class="rating-bar-bg"><div class="rating-bar-fill" style="width:0%"></div></div><span style="font-size:0.78rem;color:var(--clr-text-lt);">0%</span></div>
+            </div>
+          </div>
+
+          <!-- Private note — no public reviews shown -->
+          <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:2rem;text-align:center;">
+            <div style="font-size:1.75rem;margin-bottom:1rem;opacity:0.35;">&#9679;</div>
+            <p style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.5rem;color:var(--clr-text);">Thank you for sharing your thoughts.</p>
+            <p style="font-size:0.85rem;color:var(--clr-text-lt);line-height:1.7;">Your feedback is received and reviewed privately.<br>We appreciate every response.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Leaf &amp; Bloom</div>
+        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into your home, workplace, and most treasured moments.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://ph.pinterest.com/artiagajohnnel05/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
+      <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
+      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+<script>
+// Wire up star hint text in feedback page
+document.addEventListener('DOMContentLoaded', () => {
+  const hints = ['','1 Star — Poor','2 Stars — Fair','3 Stars — Good','4 Stars — Great','5 Stars — Excellent! 🌟'];
+  const hintEl = document.getElementById('star-hint-text');
+  document.querySelectorAll('.star-btn').forEach((btn, i) => {
+    btn.addEventListener('click', () => { if (hintEl) hintEl.textContent = hints[i+1] || ''; });
+  });
+  // Connect reviews-list to the reviews-list div
+  const list = document.getElementById('reviews-list');
+  if (list) {
+    // Reassign so renderReviews() from script.js targets this element
+    list.classList.add('reviews-list');
+  }
+});
+</script>
+</body>
+</html>

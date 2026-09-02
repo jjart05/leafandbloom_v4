@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Leaf &amp; Bloom</title>
+  <link rel="icon" href="./images/leaf.png" type="image/x-icon" />
+  <meta name="description" content="Review your cart and complete your order at Leaf & Bloom." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<div id="loader"><div class="loader-logo">Leaf &amp; Bloom</div><div class="loader-line"></div><div class="loader-pct">0%</div></div>
+<div id="cursor-dot"></div>
+<div id="cursor-outline"></div>
+<div id="scroll-progress"></div>
+<div class="page-transition"></div>
+<div id="toast-container"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="./images/leaf.png" alt="" class="nav-logo-img" aria-hidden="true">Leaf &amp; Bloom <span class="logo-dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Shop</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
+    <button class="btn-cart" aria-label="Open cart">
+      <i class="fa-solid fa-basket-shopping"></i><span>Cart</span>
+      <span class="cart-badge hidden">0</span>
+    </button>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-overlay"></div>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Shop</a>
+  <a href="services.html">Services</a><a href="contact.html">Contact</a><a href="feedback.html">Feedback</a>
+  <div class="mobile-nav-footer"><button class="btn-cart-mobile btn-cart"><i class="fa-solid fa-basket-shopping"></i> View Cart <span class="cart-badge hidden">0</span></button></div>
+</nav>
+
+<div class="cart-drawer-overlay"></div>
+<aside id="cart-drawer">
+  <div class="cart-drawer-header"><div class="cart-drawer-title">Your Cart</div><button class="cart-close">✕</button></div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-summary-row"><span class="cart-summary-label">Subtotal</span><span class="cart-summary-val cart-subtotal-val">₱0</span></div>
+    <div class="cart-summary-row"><span class="cart-summary-label">Shipping</span><span class="cart-summary-val cart-shipping-val">₱150</span></div>
+    <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-val">₱0</span></div>
+    <div class="cart-cta-wrap">
+      <button class="btn btn-outline btn-to-checkout">Checkout</button>
+      <a href="checkout.html" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="btn-clear-cart">Clear Cart</button>
+  </div>
+</aside>
+
+<!-- Order Confirmation Modal -->
+<div id="order-modal" role="dialog" aria-modal="true" aria-label="Order confirmation">
+  <div class="order-modal-backdrop"></div>
+  <div class="order-modal-content">
+    <!-- Loading State -->
+    <div class="order-loading">
+      <div class="order-spinner"></div>
+      <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--clr-text);">Processing your order…</p>
+      <p style="font-size:0.85rem;color:var(--clr-text-mid);">Please wait a moment</p>
+    </div>
+    <!-- Success State -->
+    <div class="order-success" style="display:none;">
+      <div class="order-success-icon">🌿</div>
+      <h2 class="order-modal-title">Order Placed!</h2>
+      <p class="order-modal-sub">Thank you for your order. We'll prepare your botanicals with care and notify you when they're on their way.</p>
+      <div class="order-num"></div>
+      <div style="background:var(--clr-bg-2);border-radius:var(--radius-md);padding:1rem 1.5rem;margin-bottom:1.5rem;text-align:left;">
+        <p style="font-size:0.78rem;color:var(--clr-text-lt);margin-bottom:0.3rem;letter-spacing:0.1em;text-transform:uppercase;">Estimated Delivery</p>
+        <p style="font-size:0.95rem;color:var(--clr-text);font-weight:400;">3–5 business days</p>
+      </div>
+      <button class="btn btn-primary btn-close-order" style="width:100%;justify-content:center;">
+        Continue Shopping <i class="fa-solid fa-arrow-right" style="margin-left:0.5rem;"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<a id="whatsapp-btn" href="https://wa.me/639171234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<main>
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="products.html">Shop</a><span>/</span>
+        <span>Checkout</span>
+      </div>
+      <p class="section-label reveal">Your Selection</p>
+      <h1 class="page-header-title reveal delay-1">Review <em>Order</em></h1>
+      <p class="section-sub reveal delay-2">Almost there — review your items and place your order.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="checkout-layout">
+
+        <!-- Left: Cart Items -->
+        <div class="checkout-main">
+          <h2 class="checkout-section-title">
+            Cart Items
+            <span style="font-size:0.85rem;font-family:var(--font-body);color:var(--clr-text-lt);font-weight:300;margin-left:0.5rem;">(<span class="checkout-item-count">0</span> items)</span>
+          </h2>
+          <div class="checkout-items"></div>
+
+          <!-- Continue Shopping -->
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+            <a href="products.html" class="btn btn-outline">
+              <i class="fa-solid fa-arrow-left" style="margin-right:0.4rem;"></i> Continue Shopping
+            </a>
+            <button class="btn btn-outline btn-clear-cart" style="border-color:#C0544D33;color:var(--clr-text-mid);">
+              Clear Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Order Summary -->
+        <div class="checkout-summary-card reveal delay-2">
+          <h3 class="checkout-summary-title">Order Summary</h3>
+
+          <div class="checkout-summary-row">
+            <span>Subtotal</span>
+            <span class="checkout-subtotal-val">₱0</span>
+          </div>
+          <div class="checkout-summary-row">
+            <span>Shipping</span>
+            <span class="checkout-shipping-val">₱150</span>
+          </div>
+          <div class="checkout-summary-row" style="font-size:0.78rem;color:var(--clr-text-lt);">
+            <span>Free shipping over ₱2,500</span>
+          </div>
+
+          <div class="checkout-total-row">
+            <span class="checkout-total-label">Total</span>
+            <span class="checkout-total-val">₱0</span>
+          </div>
+
+          <!-- Promo Code -->
+          <div style="margin:1rem 0;display:flex;gap:0.5rem;">
+            <input type="text" id="promo-input" placeholder="Promo code" aria-label="Promo code"
+              style="flex:1;padding:0.7rem 1rem;border:1px solid var(--clr-border);border-radius:var(--radius-pill);font-family:var(--font-body);font-size:0.82rem;background:var(--clr-bg);color:var(--clr-text);outline:none;transition:border-color 0.2s;" />
+            <button id="promo-btn" class="btn btn-outline" style="padding:0.7rem 1.2rem;font-size:0.75rem;">Apply</button>
+          </div>
+
+          <div class="checkout-actions">
+            <button class="btn btn-primary btn-proceed-checkout" style="font-size:0.82rem;">
+              <i class="fa-solid fa-lock" style="margin-right:0.4rem;"></i>
+              Proceed to Checkout
+            </button>
+            <p style="font-size:0.72rem;color:var(--clr-text-lt);text-align:center;margin-top:0.5rem;">
+              <i class="fa-solid fa-shield-halved" style="margin-right:0.3rem;"></i>
+              Secure simulated checkout — no real payment required
+            </p>
+          </div>
+
+          <!-- Trust badges -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--clr-text-mid);">
+              <i class="fa-solid fa-truck" style="color:var(--clr-primary);"></i> Fast Delivery
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--clr-text-mid);">
+              <i class="fa-solid fa-rotate-left" style="color:var(--clr-primary);"></i> Easy Returns
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--clr-text-mid);">
+              <i class="fa-solid fa-leaf" style="color:var(--clr-primary);"></i> Live Guarantee
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--clr-text-mid);">
+              <i class="fa-solid fa-headset" style="color:var(--clr-primary);"></i> 24/7 Support
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Leaf &amp; Bloom</div>
+        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into every space.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://ph.pinterest.com/artiagajohnnel05/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
+      <div><p class="footer-heading">Contact</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Promo code logic
+  const promoBtn = document.getElementById('promo-btn');
+  const promoInput = document.getElementById('promo-input');
+  const validCodes = { 'BLOOM10': 10, 'NATURE15': 15, 'LEAFLOVE': 20 };
+  promoBtn?.addEventListener('click', () => {
+    const code = promoInput.value.trim().toUpperCase();
+    if (validCodes[code]) {
+      showToast(`Promo code applied! ${validCodes[code]}% discount 🎉`, 'success');
+      promoInput.style.borderColor = 'var(--clr-primary)';
+      promoBtn.textContent = '✓ Applied';
+      promoBtn.disabled = true;
+    } else if (code) {
+      showToast('Invalid promo code. Try BLOOM10 or NATURE15!', 'error');
+      promoInput.style.borderColor = '#C0544D';
+    } else {
+      showToast('Please enter a promo code', 'info');
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Leaf &amp; Bloom Reviews</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="./images/leaf.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #3D5A3E;
+      --green-lt:   #6B8F71;
+      --gold:       #C9A84C;
+      --surface:    #FAFAF7;
+      --border:     rgba(61,90,62,0.12);
+      --text:       #1C1C1A;
+      --text-mid:   #5A5A55;
+      --text-lt:    #9A9A94;
+      --radius:     12px;
+      --shadow:     0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #F4F3EE;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Lock screen ── */
+    #lock-screen {
+      position: fixed;
+      inset: 0;
+      background: #F4F3EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .lock-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 3rem 2.5rem;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .lock-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 0.35rem;
+    }
+    .lock-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-bottom: 2.25rem;
+    }
+    .lock-label {
+      display: block;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+    }
+    .lock-input-wrap {
+      position: relative;
+      margin-bottom: 1.25rem;
+    }
+    .lock-input {
+      width: 100%;
+      padding: 0.85rem 3rem 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      letter-spacing: 0.2em;
+    }
+    .lock-input:focus { border-color: var(--green); }
+    .lock-eye {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-lt);
+      font-size: 0.85rem;
+      padding: 0.2rem;
+    }
+    .lock-eye:hover { color: var(--green); }
+    .lock-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.25rem;
+    }
+    .lock-btn:hover { background: #2e4430; }
+    .lock-error {
+      font-size: 0.78rem;
+      color: #c0392b;
+      margin-top: 0.75rem;
+      min-height: 1.1rem;
+      text-align: center;
+    }
+
+    /* ── Admin dashboard ── */
+    #dashboard {
+      display: none;
+      min-height: 100vh;
+    }
+
+    /* Top bar */
+    .admin-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .admin-bar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--green);
+    }
+    .admin-bar-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-left: 0.75rem;
+    }
+    .admin-bar-left { display: flex; align-items: center; }
+    .btn-logout {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem 1rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-logout:hover { border-color: var(--green); color: var(--green); }
+
+    /* Content */
+    .admin-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+    }
+    .stat-card-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-bottom: 0.5rem;
+    }
+    .stat-card-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--green);
+      line-height: 1;
+    }
+    .stat-card-sub {
+      font-size: 0.75rem;
+      color: var(--text-lt);
+      margin-top: 0.3rem;
+    }
+
+    /* Toolbar */
+    .reviews-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .toolbar-right { display: flex; align-items: center; gap: 0.6rem; }
+    .filter-select {
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+      cursor: pointer;
+    }
+    .btn-export {
+      padding: 0.45rem 1rem;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-export:hover { background: #2e4430; }
+    .btn-clear-all {
+      padding: 0.45rem 1rem;
+      background: none;
+      color: #c0392b;
+      border: 1px solid rgba(192,57,43,0.25);
+      border-radius: 8px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-clear-all:hover { background: rgba(192,57,43,0.06); border-color: #c0392b; }
+
+    /* Review cards */
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 0.875rem;
+      position: relative;
+    }
+    .review-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--gold));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+    .review-meta {
+      font-size: 0.72rem;
+      color: var(--text-lt);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .review-meta-tag {
+      background: rgba(61,90,62,0.08);
+      color: var(--green);
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+    }
+    .review-stars {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .review-star-label {
+      font-size: 0.68rem;
+      color: var(--gold);
+      text-align: right;
+      margin-top: 0.1rem;
+    }
+    .review-email {
+      font-size: 0.78rem;
+      color: var(--text-lt);
+      margin-bottom: 0.75rem;
+    }
+    .review-email a { color: var(--green); text-decoration: none; }
+    .review-email a:hover { text-decoration: underline; }
+    .review-improvements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .improvement-tag {
+      font-size: 0.7rem;
+      background: rgba(201,168,76,0.1);
+      color: #8a6e2a;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+    }
+    .review-comment {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+      font-style: italic;
+    }
+    .review-recommend {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-lt);
+    }
+    .review-recommend strong { color: var(--text-mid); }
+    .btn-delete {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      color: var(--text-lt);
+      cursor: pointer;
+      font-size: 0.8rem;
+      padding: 0.25rem;
+      transition: color 0.15s;
+    }
+    .btn-delete:hover { color: #c0392b; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .empty-state-icon { font-size: 2.5rem; opacity: 0.2; margin-bottom: 1rem; }
+    .empty-state-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .empty-state-sub { font-size: 0.85rem; color: var(--text-lt); }
+
+    /* Note */
+    .netlify-note {
+      background: rgba(61,90,62,0.05);
+      border: 1px solid rgba(61,90,62,0.15);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+    .netlify-note strong { color: var(--green); }
+    .netlify-note a { color: var(--green); }
+
+    @media (max-width: 600px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .admin-bar { padding: 0 1rem; }
+      .admin-content { padding: 1.5rem 1rem 4rem; }
+      .reviews-toolbar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Lock Screen -->
+<div id="lock-screen">
+  <div class="lock-card">
+    <div class="lock-logo">Leaf &amp; Bloom</div>
+    <div class="lock-sub">Admin Access</div>
+    <label class="lock-label" for="admin-pass">Password</label>
+    <div class="lock-input-wrap">
+      <input type="password" id="admin-pass" class="lock-input" placeholder="Enter password" autocomplete="current-password" />
+      <button class="lock-eye" id="toggle-pass" type="button" aria-label="Show password">
+        <i class="fa-regular fa-eye"></i>
+      </button>
+    </div>
+    <button class="lock-btn" id="login-btn" type="button">Enter Dashboard</button>
+    <div class="lock-error" id="lock-error"></div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard">
+
+  <header class="admin-bar">
+    <div class="admin-bar-left">
+      <span class="admin-bar-brand">Leaf &amp; Bloom</span>
+      <span class="admin-bar-label">Reviews Dashboard</span>
+    </div>
+    <button class="btn-logout" id="btn-logout">
+      <i class="fa-solid fa-right-from-bracket"></i> Sign out
+    </button>
+  </header>
+
+  <div class="admin-content">
+
+    <!-- Netlify note -->
+    <div class="netlify-note">
+      <strong>Note:</strong> Reviews shown here are submitted through the feedback form and saved in this browser's local storage.
+      To view all submissions including those from other devices, go to your
+      <a href="https://app.netlify.com" target="_blank" rel="noopener">Netlify dashboard</a>
+      and open the <strong>Forms</strong> tab for the <strong>leaf-bloom-feedback</strong> form.
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card">
+        <div class="stat-card-label">Total Reviews</div>
+        <div class="stat-card-value" id="stat-total">0</div>
+        <div class="stat-card-sub">all submissions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Average Rating</div>
+        <div class="stat-card-value" id="stat-avg">—</div>
+        <div class="stat-card-sub">out of 5 stars</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">5-Star Reviews</div>
+        <div class="stat-card-value" id="stat-five">0</div>
+        <div class="stat-card-sub" id="stat-five-pct">— of total</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Would Recommend</div>
+        <div class="stat-card-value" id="stat-rec">—</div>
+        <div class="stat-card-sub">responded yes</div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="reviews-toolbar">
+      <span class="section-heading">Submitted Feedback</span>
+      <div class="toolbar-right">
+        <select class="filter-select" id="filter-rating" aria-label="Filter by rating">
+          <option value="all">All ratings</option>
+          <option value="5">5 stars</option>
+          <option value="4">4 stars</option>
+          <option value="3">3 stars</option>
+          <option value="2">2 stars</option>
+          <option value="1">1 star</option>
+        </select>
+        <button class="btn-export" id="btn-export">
+          <i class="fa-solid fa-file-csv"></i> Export CSV
+        </button>
+        <button class="btn-clear-all" id="btn-clear-all">Clear All</button>
+      </div>
+    </div>
+
+    <!-- Reviews list -->
+    <div id="admin-reviews-list"></div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  // ── Config ──────────────────────────────────────────────
+  // Change this password to whatever you want
+  const ADMIN_PASSWORD = 'leafbloom2025';
+  const SESSION_KEY    = 'lb_admin_auth';
+  const REVIEWS_KEY    = 'lb_reviews';
+
+  // ── Elements ─────────────────────────────────────────────
+  const lockScreen  = document.getElementById('lock-screen');
+  const dashboard   = document.getElementById('dashboard');
+  const passInput   = document.getElementById('admin-pass');
+  const loginBtn    = document.getElementById('login-btn');
+  const lockError   = document.getElementById('lock-error');
+  const togglePass  = document.getElementById('toggle-pass');
+  const logoutBtn   = document.getElementById('btn-logout');
+  const filterSel   = document.getElementById('filter-rating');
+  const exportBtn   = document.getElementById('btn-export');
+  const clearAllBtn = document.getElementById('btn-clear-all');
+  const reviewsList = document.getElementById('admin-reviews-list');
+
+  // ── Auth ─────────────────────────────────────────────────
+  function unlock() {
+    lockScreen.style.display  = 'none';
+    dashboard.style.display   = 'block';
+    sessionStorage.setItem(SESSION_KEY, '1');
+    renderAll();
+  }
+
+  function lock() {
+    sessionStorage.removeItem(SESSION_KEY);
+    lockScreen.style.display  = 'flex';
+    dashboard.style.display   = 'none';
+    passInput.value = '';
+    lockError.textContent = '';
+  }
+
+  function attemptLogin() {
+    if (passInput.value === ADMIN_PASSWORD) {
+      lockError.textContent = '';
+      unlock();
+    } else {
+      lockError.textContent = 'Incorrect password. Please try again.';
+      passInput.value = '';
+      passInput.focus();
+    }
+  }
+
+  // Auto-unlock if already authenticated this session
+  if (sessionStorage.getItem(SESSION_KEY) === '1') unlock();
+
+  loginBtn.addEventListener('click', attemptLogin);
+  passInput.addEventListener('keydown', e => { if (e.key === 'Enter') attemptLogin(); });
+  logoutBtn.addEventListener('click', lock);
+
+  togglePass.addEventListener('click', () => {
+    const show = passInput.type === 'password';
+    passInput.type = show ? 'text' : 'password';
+    togglePass.innerHTML = show
+      ? '<i class="fa-regular fa-eye-slash"></i>'
+      : '<i class="fa-regular fa-eye"></i>';
+  });
+
+  // ── Data ─────────────────────────────────────────────────
+  async function getReviews() {
+    try {
+      const stored = await window.storage.get(REVIEWS_KEY, true);
+      if (stored && stored.value) return JSON.parse(stored.value);
+    } catch (e) { /* key doesn't exist yet */ }
+    // Fallback to localStorage
+    return JSON.parse(localStorage.getItem(REVIEWS_KEY) || '[]');
+  }
+
+  async function saveReviews(reviews) {
+    try {
+      await window.storage.set(REVIEWS_KEY, JSON.stringify(reviews), true);
+    } catch (e) {
+      localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews));
+    }
+  }
+
+  async function deleteReview(index) {
+    if (!confirm('Delete this review? This cannot be undone.')) return;
+    const reviews = await getReviews();
+    reviews.splice(index, 1);
+    await saveReviews(reviews);
+    renderAll();
+  }
+
+  // ── Stats ─────────────────────────────────────────────────
+  function renderStats(reviews) {
+    const total = reviews.length;
+    const avg   = total ? (reviews.reduce((s, r) => s + (r.rating || 0), 0) / total).toFixed(1) : '—';
+    const five  = reviews.filter(r => r.rating === 5).length;
+    const rec   = reviews.filter(r => r.recommend === 'yes').length;
+    const recPct = total ? Math.round((rec / total) * 100) + '%' : '—';
+
+    document.getElementById('stat-total').textContent   = total;
+    document.getElementById('stat-avg').textContent     = avg;
+    document.getElementById('stat-five').textContent    = five;
+    document.getElementById('stat-five-pct').textContent = total ? Math.round((five / total) * 100) + '% of total' : '— of total';
+    document.getElementById('stat-rec').textContent     = recPct;
+  }
+
+  // ── Render ────────────────────────────────────────────────
+  const ratingLabels = { 1: 'Poor', 2: 'Fair', 3: 'Good', 4: 'Great', 5: 'Excellent' };
+
+  async function renderAll() {
+    const reviews    = await getReviews();
+    const filterVal  = filterSel.value;
+    const filtered   = filterVal === 'all'
+      ? reviews
+      : reviews.filter(r => String(r.rating) === filterVal);
+
+    renderStats(reviews);
+
+    if (filtered.length === 0) {
+      reviewsList.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon"><i class="fa-regular fa-comment-dots"></i></div>
+          <div class="empty-state-title">No reviews yet</div>
+          <div class="empty-state-sub">Submitted feedback will appear here.</div>
+        </div>`;
+      return;
+    }
+
+    reviewsList.innerHTML = filtered.map((r, i) => {
+      const initials  = (r.name || 'A').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+      const filled    = '&#9733;'.repeat(r.rating || 0);
+      const empty     = '&#9734;'.repeat(5 - (r.rating || 0));
+      const label     = ratingLabels[r.rating] || '';
+      const emailHtml = r.email
+        ? `<div class="review-email">Email: <a href="mailto:${esc(r.email)}">${esc(r.email)}</a></div>`
+        : '';
+      const improvements = Array.isArray(r.improvements)
+        ? r.improvements
+        : (r.improvements ? [r.improvements] : []);
+      const tagsHtml = improvements.length
+        ? `<div class="review-improvements">${improvements.map(t => `<span class="improvement-tag">${esc(t)}</span>`).join('')}</div>`
+        : '';
+      const recommendMap = { yes: 'Yes, definitely!', maybe: 'Maybe', no: 'Not yet' };
+      const recHtml = r.recommend
+        ? `<div class="review-recommend">Would recommend: <strong>${recommendMap[r.recommend] || r.recommend}</strong></div>`
+        : '';
+
+      // Use real index in full reviews array for deletion
+      const realIndex = reviews.indexOf(r);
+
+      return `
+      <div class="review-card">
+        <button class="btn-delete" onclick="deleteReview(${realIndex})" title="Delete review">
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
+        <div class="review-card-header">
+          <div class="review-avatar">${initials}</div>
+          <div style="flex:1;min-width:0;">
+            <div class="review-name">${esc(r.name || 'Anonymous')}</div>
+            <div class="review-meta">
+              <span>${r.date || 'No date'}</span>
+              <span class="review-meta-tag">Rating: ${r.rating || '—'} / 5</span>
+            </div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div class="review-stars">${filled}${empty}</div>
+            <div class="review-star-label">${label}</div>
+          </div>
+        </div>
+        ${emailHtml}
+        ${tagsHtml}
+        ${r.comment ? `<div class="review-comment">${esc(r.comment)}</div>` : ''}
+        ${recHtml}
+      </div>`;
+    }).join('');
+  }
+
+  // Make deleteReview globally accessible for inline onclick
+  window.deleteReview = deleteReview;
+
+  filterSel.addEventListener('change', renderAll);
+
+  // ── Clear all ─────────────────────────────────────────────
+  clearAllBtn.addEventListener('click', async () => {
+    if (!confirm('Delete ALL reviews? This cannot be undone.')) return;
+    await saveReviews([]);
+    renderAll();
+  });
+
+  // ── CSV Export ────────────────────────────────────────────
+  exportBtn.addEventListener('click', async () => {
+    const reviews = await getReviews();
+    if (!reviews.length) { alert('No reviews to export.'); return; }
+
+    const headers = ['Name', 'Email', 'Rating', 'Star Label', 'Comment', 'Would Recommend', 'Improvements', 'Date'];
+    const rows    = reviews.map(r => [
+      r.name    || '',
+      r.email   || '',
+      r.rating  || '',
+      ratingLabels[r.rating] || '',
+      r.comment || '',
+      r.recommend || '',
+      (Array.isArray(r.improvements) ? r.improvements.join('; ') : r.improvements || ''),
+      r.date    || ''
+    ].map(v => `"${String(v).replace(/"/g, '""')}"`));
+
+    const csv  = [headers, ...rows].map(r => r.join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = `leaf-bloom-reviews-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // ── Helpers ───────────────────────────────────────────────
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+})();
+</script>
+</body>
+</html>
