@@ -79,7 +79,3 @@ development practices.
 ## License
 
 This project is intended for educational and portfolio purposes.
-
-
-b6xo3XDvAKFA - cheezy asia server
-KUFz7uXnAJEM - main acc asia server
