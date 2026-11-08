@@ -1,0 +1,8 @@
+.cursor/
+.impeccable/
+*.log
+.DS_Store
+Thumbs.db
+tmp-*/
+tmp-ig/
+tmp-product-audit/

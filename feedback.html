@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>#loader{display:none!important}</style>
+<script>
+  try {
+    if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
+  } catch (e) {}
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feedback — Leaf &amp; Bloom</title>
@@ -8,14 +15,31 @@
   <meta name="description" content="Share your feedback about Leaf & Bloom. We'd love to hear your thoughts and suggestions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v=scroll-reveal" />
   <style>
     /* Feedback-specific styles */
     .feedback-wrap { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: 2.5rem; box-sizing: border-box; width: 100%; overflow: hidden; }
-    .star-rating { display: flex; gap: 0.4rem; margin: 0.75rem 0 1rem; }
-    .star-btn { background: none; border: none; font-size: 2rem; color: var(--clr-border); line-height: 1; transition: color 0.15s, transform 0.15s; }
-    .star-btn.active, .star-btn:hover { color: var(--clr-accent); transform: scale(1.1); }
-    .star-hint { font-size: 0.82rem; color: var(--clr-accent); font-style: italic; min-height: 1.2em; display: block; margin-bottom: 1rem; }
+    .star-rating {
+      display: flex; gap: 0.4rem; margin: 0.75rem 0 0.5rem; align-items: center;
+      height: 2.25rem; overflow: hidden; flex-wrap: nowrap;
+    }
+    .star-btn {
+      background: none; border: none; padding: 0; margin: 0;
+      font-size: 1.75rem; color: var(--clr-text-lt); line-height: 1;
+      transition: color 0.15s; width: 2.25rem; height: 2.25rem; flex: 0 0 2.25rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      transform: none !important; box-shadow: none !important;
+    }
+    .star-btn.active, .star-btn:hover, .star-btn:focus-visible {
+      color: var(--clr-accent); transform: none !important; outline: none;
+    }
+    body.dark-mode .star-btn { color: #7a8574; }
+    body.dark-mode .star-btn.active, body.dark-mode .star-btn:hover { color: #d5e0cf; }
+    .star-hint {
+      font-size: 0.82rem; color: var(--clr-accent); font-style: italic;
+      display: block; height: 1.35rem; line-height: 1.35rem;
+      margin: 0 0 1rem; overflow: hidden; white-space: nowrap;
+    }
     .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.25rem; }
     .checkbox-item { display: flex; align-items: center; gap: 0.5rem; }
     .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--clr-primary); cursor: pointer; }
@@ -139,12 +163,12 @@
                   <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:0.72rem;color:var(--clr-text-lt);margin-left:0.4rem;">(select all that apply)</span>
                 </label>
                 <div class="checkbox-grid">
-                  <div class="checkbox-item"><input type="checkbox" id="cb-design" name="improvements" value="Design/UI"><label for="cb-design">🎨 Design / UI</label></div>
-                  <div class="checkbox-item"><input type="checkbox" id="cb-nav" name="improvements" value="Navigation"><label for="cb-nav">🧭 Navigation</label></div>
-                  <div class="checkbox-item"><input type="checkbox" id="cb-perf" name="improvements" value="Performance"><label for="cb-perf">⚡ Performance</label></div>
-                  <div class="checkbox-item"><input type="checkbox" id="cb-features" name="improvements" value="Features"><label for="cb-features">✨ Features</label></div>
-                  <div class="checkbox-item"><input type="checkbox" id="cb-content" name="improvements" value="Content"><label for="cb-content">📝 Content</label></div>
-                  <div class="checkbox-item"><input type="checkbox" id="cb-mobile" name="improvements" value="Mobile Experience"><label for="cb-mobile">📱 Mobile</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-design" name="improvements" value="Design/UI"><label for="cb-design">Design / UI</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-nav" name="improvements" value="Navigation"><label for="cb-nav">Navigation</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-perf" name="improvements" value="Performance"><label for="cb-perf">Performance</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-features" name="improvements" value="Features"><label for="cb-features">Features</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-content" name="improvements" value="Content"><label for="cb-content">Content</label></div>
+                  <div class="checkbox-item"><input type="checkbox" id="cb-mobile" name="improvements" value="Mobile Experience"><label for="cb-mobile">Mobile</label></div>
                 </div>
               </div>
 
@@ -219,7 +243,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Leaf &amp; Bloom</div>
-        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into your home, workplace, and most treasured moments.</p>
+        <p class="footer-about">A Cebu botanical studio for plants, florals, and event work across the Philippines.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -228,17 +252,17 @@
       </div>
       <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
       <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
-      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">+63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">hello@leafandbloom.ph</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Studio in Cebu, Philippines</span></div>
   </div>
 </footer>
 
-<script src="./js/script.js"></script>
+<script src="./js/script.js?v=no-people"></script>
 <script>
 // Wire up star hint text in feedback page
 document.addEventListener('DOMContentLoaded', () => {
-  const hints = ['','1 Star — Poor','2 Stars — Fair','3 Stars — Good','4 Stars — Great','5 Stars — Excellent! 🌟'];
+  const hints = ['','1 star — Poor','2 stars — Fair','3 stars — Good','4 stars — Great','5 stars — Excellent'];
   const hintEl = document.getElementById('star-hint-text');
   document.querySelectorAll('.star-btn').forEach((btn, i) => {
     btn.addEventListener('click', () => { if (hintEl) hintEl.textContent = hints[i+1] || ''; });

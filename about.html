@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>#loader{display:none!important}</style>
+<script>
+  try {
+    if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
+  } catch (e) {}
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us — Leaf &amp; Bloom</title>
   <link rel="icon" href="./images/leaf.svg" type="image/svg+xml" />
-  <meta name="description" content="Learn the story behind Leaf & Bloom — a luxury botanical studio born from a love of nature, artistry, and living beauty." />
+  <meta name="description" content="Leaf & Bloom is a Cebu botanical studio for plants, florals, and event work across the Philippines." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v=about-smooth" />
 </head>
 <body>
 
@@ -79,7 +86,7 @@
   </section>
 
   <!-- Hero Image -->
-  <section class="section-sm">
+  <section class="section-sm hide-on-mobile">
   <div class="container">
     <video class="about-hero-img reveal" autoplay muted loop playsinline preload="auto">
       <source src="./images/hero.mp4" type="video/mp4" />
@@ -92,11 +99,11 @@
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <p class="section-label">The Beginning</p>
-          <h2 class="section-title">Born from a <em>Garden</em></h2>
-          <p class="section-sub" style="max-width:100%;margin-top:1rem">In 2018, our founder Johnnel Artiaga transformed his passion for rare botanicals into a curated studio tucked in the heart of Cebu City. What began as hand-delivering lovingly potted plants to neighbours quickly blossomed into something extraordinary.</p>
-          <p class="section-sub" style="max-width:100%;margin-top:1rem">Today, Leaf &amp; Bloom is a full-service botanical studio serving clients across the Philippines — from intimate home collections to grand corporate biophilic installations and once-in-a-lifetime weddings.</p>
-          <p class="section-sub" style="max-width:100%;margin-top:1rem">Every plant we carry has a story. Every arrangement we create is a piece of living art. We believe that surrounding yourself with nature is one of the greatest luxuries in the world.</p>
+          <p class="section-label">The beginning</p>
+          <h2 class="section-title">Started in Cebu</h2>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">In 2018, founder Johnnel Artiaga began delivering potted plants to neighbours in Cebu City. That small route became Leaf &amp; Bloom — a studio for plants, florals, and event work.</p>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">Today the studio serves homes, workplaces, and celebrations across the Philippines, with pricing in pesos and care notes that match the climate.</p>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">We choose plants that will live in the room they enter — not only look good for a photograph.</p>
         </div>
         <div class="split-img reveal-right">
           <img src="./images/me.jpg" alt="Johnnel Artiaga, Founder"
@@ -111,64 +118,109 @@
   </section>
 
   <!-- Mission & Vision -->
-  <section class="section">
+  <section class="section" aria-labelledby="purpose-title">
     <div class="container">
-      <div class="mission-header">
-        <p class="section-label reveal" style="justify-content:center">Our Purpose</p>
-        <h2 class="section-title reveal delay-1">Mission &amp; <em>Vision</em></h2>
+      <div class="purpose-intro reveal">
+        <h2 class="section-title" id="purpose-title">Mission and vision</h2>
+        <p class="section-sub">Tap either side to read how the studio is aimed.</p>
       </div>
-      <div class="mission-grid">
-        <div class="mission-card reveal delay-1">
-          <div class="mission-icon">🎯</div>
-          <h3 class="mission-title">Our Mission</h3>
-          <p class="mission-text">To make the extraordinary beauty of the botanical world accessible — delivering premium plants and floral artistry that transform any space into a living sanctuary.</p>
+
+      <div class="purpose-switcher reveal delay-1" data-purpose-switcher>
+        <div class="purpose-tabs" role="tablist" aria-label="Mission and vision">
+          <button type="button" class="purpose-tab" role="tab" id="purpose-tab-mission" aria-controls="purpose-panel" aria-selected="true" tabindex="0" data-purpose="mission">Mission</button>
+          <button type="button" class="purpose-tab" role="tab" id="purpose-tab-vision" aria-controls="purpose-panel" aria-selected="false" tabindex="-1" data-purpose="vision">Vision</button>
         </div>
-        <div class="mission-card reveal delay-2">
-          <div class="mission-icon">🌱</div>
-          <h3 class="mission-title">Our Vision</h3>
-          <p class="mission-text">To be the Philippines' most celebrated luxury botanical studio — inspiring homes, workplaces, and celebrations through timeless botanical artistry.</p>
+        <div class="purpose-panel" role="tabpanel" id="purpose-panel" aria-labelledby="purpose-tab-mission" tabindex="0">
+          <div class="purpose-panel-body">
+            <p class="purpose-kicker" data-purpose-kicker>What we do</p>
+            <h3 class="purpose-heading" data-purpose-heading>Mission</h3>
+            <p class="purpose-copy" data-purpose-copy>Bring well-chosen plants and florals into Philippine homes, workplaces, and celebrations — with clear care and honest pricing in pesos.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Values -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" aria-labelledby="values-title">
     <div class="container">
-      <div style="text-align:center;margin-bottom:3rem">
-        <p class="section-label reveal" style="justify-content:center">What Drives Us</p>
-        <h2 class="section-title reveal delay-1">Our <em>Values</em></h2>
+      <div class="values-intro reveal">
+        <h2 class="section-title" id="values-title">Studio values</h2>
+        <p class="section-sub">Open a value to see how it shows up in the weekly work.</p>
       </div>
-      <div class="values-grid">
-        <div class="value-card reveal delay-1">
-          <div class="value-icon">✨</div>
-          <h3 class="value-title">Uncompromising Quality</h3>
-          <p class="value-text">Every plant is inspected. Every arrangement is crafted. We never settle for anything less than extraordinary.</p>
+
+      <div class="values-accordion reveal delay-1" data-values-accordion>
+        <div class="value-item is-open">
+          <button type="button" class="value-trigger" aria-expanded="true" id="value-btn-1" aria-controls="value-panel-1">
+            <span class="value-index">01</span>
+            <span class="value-title">Inspect before it leaves</span>
+            <span class="value-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="value-panel" id="value-panel-1" role="region" aria-labelledby="value-btn-1">
+            <div class="value-panel-inner">
+              <p class="value-text">Plants are checked before packing. Arrangements are finished in the studio, not assembled in a rush at the door.</p>
+            </div>
+          </div>
         </div>
-        <div class="value-card reveal delay-2">
-          <div class="value-icon">🌍</div>
-          <h3 class="value-title">Sustainable Sourcing</h3>
-          <p class="value-text">We partner only with responsible growers and use eco-conscious packaging throughout our operations.</p>
+        <div class="value-item">
+          <button type="button" class="value-trigger" aria-expanded="false" id="value-btn-2" aria-controls="value-panel-2">
+            <span class="value-index">02</span>
+            <span class="value-title">Source with care</span>
+            <span class="value-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="value-panel" id="value-panel-2" role="region" aria-labelledby="value-btn-2">
+            <div class="value-panel-inner">
+              <p class="value-text">We work with growers we trust and keep packaging simple and reusable where we can.</p>
+            </div>
+          </div>
         </div>
-        <div class="value-card reveal delay-3">
-          <div class="value-icon">💚</div>
-          <h3 class="value-title">Plant-First Philosophy</h3>
-          <p class="value-text">We are passionate botanists first and foremost — every decision is guided by what's best for our living products.</p>
+        <div class="value-item">
+          <button type="button" class="value-trigger" aria-expanded="false" id="value-btn-3" aria-controls="value-panel-3">
+            <span class="value-index">03</span>
+            <span class="value-title">Plant health first</span>
+            <span class="value-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="value-panel" id="value-panel-3" role="region" aria-labelledby="value-btn-3">
+            <div class="value-panel-inner">
+              <p class="value-text">If a plant will not thrive in your light, we say so — and suggest another.</p>
+            </div>
+          </div>
         </div>
-        <div class="value-card reveal delay-4">
-          <div class="value-icon">🤝</div>
-          <h3 class="value-title">Client Partnership</h3>
-          <p class="value-text">We listen deeply and work closely with each client to create something that is uniquely theirs.</p>
+        <div class="value-item">
+          <button type="button" class="value-trigger" aria-expanded="false" id="value-btn-4" aria-controls="value-panel-4">
+            <span class="value-index">04</span>
+            <span class="value-title">Listen first</span>
+            <span class="value-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="value-panel" id="value-panel-4" role="region" aria-labelledby="value-btn-4">
+            <div class="value-panel-inner">
+              <p class="value-text">Briefs start with the room, the date, and the budget before any design language.</p>
+            </div>
+          </div>
         </div>
-        <div class="value-card reveal delay-5">
-          <div class="value-icon">🎨</div>
-          <h3 class="value-title">Creative Excellence</h3>
-          <p class="value-text">We approach every project as an artistic endeavour — with originality, intention, and beauty at the core.</p>
+        <div class="value-item">
+          <button type="button" class="value-trigger" aria-expanded="false" id="value-btn-5" aria-controls="value-panel-5">
+            <span class="value-index">05</span>
+            <span class="value-title">Intentional design</span>
+            <span class="value-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="value-panel" id="value-panel-5" role="region" aria-labelledby="value-btn-5">
+            <div class="value-panel-inner">
+              <p class="value-text">Stems and foliage are placed for scale and use — not for filling empty space.</p>
+            </div>
+          </div>
         </div>
-        <div class="value-card reveal delay-6">
-          <div class="value-icon">🚀</div>
-          <h3 class="value-title">Continuous Growth</h3>
-          <p class="value-text">Like the plants we tend, we are always learning, growing, and reaching toward the light.</p>
+        <div class="value-item">
+          <button type="button" class="value-trigger" aria-expanded="false" id="value-btn-6" aria-controls="value-panel-6">
+            <span class="value-index">06</span>
+            <span class="value-title">Keep learning</span>
+            <span class="value-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="value-panel" id="value-panel-6" role="region" aria-labelledby="value-btn-6">
+            <div class="value-panel-inner">
+              <p class="value-text">New cultivars, seasons, and care methods stay part of the weekly studio work.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -178,8 +230,8 @@
   <section class="section">
     <div class="container">
       <div style="text-align:center;margin-bottom:3.5rem">
-        <p class="section-label reveal" style="justify-content:center">The People</p>
-        <h2 class="section-title reveal delay-1">Meet the <em>Team</em></h2>
+        <p class="section-label reveal" style="justify-content:center">People</p>
+        <h2 class="section-title reveal delay-1">The team</h2>
         <p class="section-sub reveal delay-2" style="margin:1rem auto 0">A passionate collective of botanists, floral artists, and creative thinkers.</p>
       </div>
       <div class="team-grid">
@@ -234,7 +286,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Leaf &amp; Bloom</div>
-        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into your home, workplace, and most treasured moments.</p>
+        <p class="footer-about">A Cebu botanical studio for plants, florals, and event work across the Philippines.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -243,12 +295,12 @@
       </div>
       <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
       <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
-      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+      <div><p class="footer-heading">Contact Us</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">+63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">hello@leafandbloom.ph</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Studio in Cebu, Philippines</span></div>
   </div>
 </footer>
 
-<script src="./js/script.js"></script>
+<script src="./js/script.js?v=about-smooth"></script>
 </body>
 </html>

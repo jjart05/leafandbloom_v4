@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>#loader{display:none!important}</style>
+<script>
+  try {
+    if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
+  } catch (e) {}
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout — Leaf &amp; Bloom</title>
@@ -8,7 +15,7 @@
   <meta name="description" content="Review your cart and complete your order at Leaf & Bloom." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v=scroll-reveal" />
 </head>
 <body>
 
@@ -73,7 +80,7 @@
     </div>
     <!-- Success State -->
     <div class="order-success" style="display:none;">
-      <div class="order-success-icon">🌿</div>
+      <div class="order-success-icon"><i class="fa-solid fa-check"></i></div>
       <h2 class="order-modal-title">Order Placed!</h2>
       <p class="order-modal-sub">Thank you for your order. We'll prepare your botanicals with care and notify you when they're on their way.</p>
       <div class="order-num"></div>
@@ -195,7 +202,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Leaf &amp; Bloom</div>
-        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into every space.</p>
+        <p class="footer-about">A Cebu botanical studio for plants, florals, and event work across the Philippines.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -204,13 +211,13 @@
       </div>
       <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
-      <div><p class="footer-heading">Contact</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+      <div><p class="footer-heading">Contact</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem">Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">+63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">hello@leafandbloom.ph</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Studio in Cebu, Philippines</span></div>
   </div>
 </footer>
 
-<script src="./js/script.js"></script>
+<script src="./js/script.js?v=no-people"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   // Promo code logic
@@ -220,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   promoBtn?.addEventListener('click', () => {
     const code = promoInput.value.trim().toUpperCase();
     if (validCodes[code]) {
-      showToast(`Promo code applied! ${validCodes[code]}% discount 🎉`, 'success');
+      showToast(`Promo applied: ${validCodes[code]}% off.`, 'success');
       promoInput.style.borderColor = 'var(--clr-primary)';
       promoBtn.textContent = '✓ Applied';
       promoBtn.disabled = true;

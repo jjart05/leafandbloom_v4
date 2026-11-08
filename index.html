@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>#loader{display:none!important}</style>
+<script>
+  try {
+    if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
+  } catch (e) {}
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leaf & Bloom — Luxury Botanical Studio</title>
+  <title>Leaf &amp; Bloom — Botanical studio in Cebu</title>
   <link rel="icon" href="./images/leaf.svg" type="image/svg+xml" />
-  <meta name="description" content="Premium botanical studio offering rare plants, artisan floral arrangements, wedding styling, and curated plant subscriptions. Elevate your space with nature's finest." />
+  <meta name="description" content="Leaf & Bloom — a Cebu botanical studio for plants, florals, and event styling across the Philippines. Priced in pesos." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v=mobile-scroll" />
+  <link rel="preload" as="image" href="./images/herlight.png" />
+  <link rel="preload" as="image" href="./images/herdark.png" />
 </head>
 <body>
 
@@ -69,7 +78,6 @@
   <a href="contact.html">Contact</a>
   <a href="feedback.html">Feedback</a>
   <div class="mobile-nav-footer">
-    <button class="theme-toggle theme-toggle-mobile" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i> <span class="theme-toggle-label">Dark Mode</span></button>
     <button class="btn-cart-mobile btn-cart" aria-label="View cart">
       <i class="fa-solid fa-basket-shopping"></i> View Cart
       <span class="cart-badge hidden">0</span>
@@ -110,7 +118,9 @@
 <div id="quick-view-modal" role="dialog" aria-modal="true" aria-label="Product quick view">
   <div class="modal-backdrop"></div>
   <div class="modal-content">
-    <img class="modal-img" src="" alt="" />
+    <div class="modal-media">
+      <img class="modal-img" src="" alt="" />
+    </div>
     <div class="modal-body">
       <button class="modal-close" aria-label="Close">✕</button>
       <p class="modal-category"></p>
@@ -147,49 +157,28 @@
   <section class="hero" aria-label="Hero">
     <div class="hero-bg" role="img" aria-label="Botanical studio background"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
-    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
-        <p class="hero-label">Est. 2018 &mdash; Botanical Studio</p>
-        <h1 class="hero-title">Where Nature<br>Meets <em>Luxury</em></h1>
-        <p class="hero-desc">Artisan floral arrangements, rare botanical collections, and bespoke plant design services crafted for those who appreciate the finest things in life.</p>
+        <p class="hero-label">Buhisan, Cebu · Est. 2018</p>
+        <h1 class="hero-title">Plants and florals<br> for Philippine homes</h1>
+        <p class="hero-desc">Rare indoor plants, seasonal arrangements, and studio styling from Leaf &amp; Bloom — priced in pesos, chosen for local light.</p>
         <div class="hero-actions">
           <a href="products.html" class="btn btn-primary">
-            Explore Collection
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Shop plants
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="services.html" class="btn btn-outline" style="color:#FAF8F5;border-color:rgba(250,248,245,0.4);">Our Services</a>
+          <a href="services.html" class="btn btn-outline" style="color:#FAF8F5;border-color:rgba(250,248,245,0.35);">View services</a>
         </div>
       </div>
-    </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <div class="hero-scroll-line"></div>
-      Scroll
     </div>
   </section>
 
-  <!-- ── Stats Bar ── -->
-  <div class="stats-bar" aria-label="Studio statistics">
+  <!-- ── Studio line ── -->
+  <div class="stats-bar" aria-label="Studio location">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-num" data-target="850" data-suffix="+">0<span>+</span></div>
-          <div class="stat-label">Plant Species</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="4200" data-suffix="+">0<span>+</span></div>
-          <div class="stat-label">Happy Clients</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="6" data-suffix=" yrs">0<span> yrs</span></div>
-          <div class="stat-label">In Business</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="98" data-suffix="%">0<span>%</span></div>
-          <div class="stat-label">Satisfaction</div>
-        </div>
-      </div>
+      <p style="text-align:center;font-size:0.9375rem;color:var(--clr-text-mid);margin:0;">
+        Botanical studio in Buhisan, Dulhugan, Cebu City · Open Mon–Sat, 9AM–6PM
+      </p>
     </div>
   </div>
 
@@ -198,17 +187,17 @@
     <div class="container">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:3rem;">
         <div>
-          <p class="section-label reveal">Curated Selection</p>
-          <h2 class="section-title reveal delay-1" id="bestsellers-title">Best <em>Sellers</em></h2>
-          <p class="section-sub reveal delay-2">Each plant is hand-selected and carefully nurtured to ensure it arrives at peak beauty.</p>
+          <p class="section-label reveal">Shop</p>
+          <h2 class="section-title reveal delay-1" id="bestsellers-title">Plants in the studio now</h2>
+          <p class="section-sub reveal delay-2">A short list from the current collection — tropicals, orchids, and statement foliage.</p>
         </div>
-        <a href="products.html" class="btn btn-outline reveal delay-3">View All Plants</a>
+        <a href="products.html" class="btn btn-outline reveal delay-3">View all plants</a>
       </div>
       <div class="products-grid">
 
         <article class="product-card reveal delay-1" data-product-id="1">
           <div class="product-img-wrap">
-            <span class="product-badge gold">Best Seller</span>
+            <span class="product-badge">Popular</span>
             <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?q=80&w=435&auto=format&fit=crop" alt="Monstera Deliciosa" loading="lazy" />
             <div class="product-overlay" aria-hidden="true">
               <button class="product-overlay-btn">Quick View</button>
@@ -218,7 +207,7 @@
           <div class="product-body">
             <p class="product-category">Tropical Plants</p>
             <h3 class="product-name">Monstera Deliciosa</h3>
-            <p class="product-desc">The iconic split-leaf philodendron, a statement piece for any space.</p>
+            <p class="product-desc">Split-leaf philodendron for bright, filtered indoor light.</p>
             <div class="product-footer">
               <span class="product-price">₱1,200</span>
               <button class="product-add" aria-label="Add Monstera Deliciosa to cart"><i class="fa-solid fa-plus"></i></button>
@@ -228,7 +217,7 @@
 
         <article class="product-card reveal delay-2" data-product-id="5">
           <div class="product-img-wrap">
-            <span class="product-badge">New Arrival</span>
+            <span class="product-badge">New</span>
             <img src="https://images.unsplash.com/photo-1632906379687-355e24798632?q=80&w=1073&auto=format&fit=crop" alt="Pink Anthurium" loading="lazy" />
             <div class="product-overlay" aria-hidden="true">
               <button class="product-overlay-btn">Quick View</button>
@@ -238,7 +227,7 @@
           <div class="product-body">
             <p class="product-category">Flowering Plants</p>
             <h3 class="product-name">Pink Anthurium</h3>
-            <p class="product-desc">Velvety heart-shaped blooms in soft blush — effortlessly elegant.</p>
+            <p class="product-desc">Heart-shaped blooms in soft blush for indoor tables.</p>
             <div class="product-footer">
               <span class="product-price">₱1,800</span>
               <button class="product-add" aria-label="Add Pink Anthurium to cart"><i class="fa-solid fa-plus"></i></button>
@@ -246,7 +235,7 @@
           </div>
         </article>
 
-        <article class="product-card reveal delay-3" data-product-id="4">
+        <article class="product-card reveal delay-3 hide-on-mobile" data-product-id="4">
           <div class="product-img-wrap">
             <span class="product-badge sale">Sale</span>
             <img src="https://images.unsplash.com/photo-1710524784485-5c77ae822ecc?q=80&w=1170&auto=format&fit=crop" alt="White Phalaenopsis" loading="lazy" />
@@ -258,7 +247,7 @@
           <div class="product-body">
             <p class="product-category">Orchids</p>
             <h3 class="product-name">White Phalaenopsis</h3>
-            <p class="product-desc">Pure white cascading blooms — the definition of timeless grace.</p>
+            <p class="product-desc">White phalaenopsis orchid with cascading blooms.</p>
             <div class="product-footer">
               <span class="product-price">₱2,200 <span class="product-price-old">₱2,800</span></span>
               <button class="product-add" aria-label="Add White Phalaenopsis to cart"><i class="fa-solid fa-plus"></i></button>
@@ -266,7 +255,7 @@
           </div>
         </article>
 
-        <article class="product-card reveal delay-4" data-product-id="2">
+        <article class="product-card reveal delay-4 hide-on-mobile" data-product-id="2">
           <div class="product-img-wrap">
             <img src="https://images.unsplash.com/photo-1545239705-1564e58b9e4a?q=80&w=687&auto=format&fit=crop" alt="Fiddle Leaf Fig" loading="lazy" />
             <div class="product-overlay" aria-hidden="true">
@@ -277,7 +266,7 @@
           <div class="product-body">
             <p class="product-category">Statement Trees</p>
             <h3 class="product-name">Fiddle Leaf Fig</h3>
-            <p class="product-desc">Architectural silhouette with dramatic, glossy foliage.</p>
+            <p class="product-desc">Tall indoor fig with broad, glossy leaves.</p>
             <div class="product-footer">
               <span class="product-price">₱3,500</span>
               <button class="product-add" aria-label="Add Fiddle Leaf Fig to cart"><i class="fa-solid fa-plus"></i></button>
@@ -289,25 +278,32 @@
     </div>
   </section>
 
+  <!-- Mobile quick links (short home) -->
+  <nav class="mobile-home-links hide-on-desktop" aria-label="Quick links">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <!-- ── Brand Story ── -->
-  <section class="section bg-cream" aria-labelledby="story-title">
+  <section class="section bg-cream home-desktop-only" aria-labelledby="story-title">
     <div class="container">
       <div class="split">
         <div class="split-img reveal-left">
-          <img src="https://images.unsplash.com/photo-1601112240348-b2e87c7ea616?w=700&q=80" alt="Botanical shop interior" />
+          <img src="./images/me.jpg" alt="Johnnel Artiaga in the studio" />
           <div class="split-img-accent">
-            <p>6+</p>
-            <span>Years of Botanical Excellence</span>
+            <p>Johnnel</p>
+            <span>Founder, Cebu</span>
           </div>
         </div>
         <div class="reveal-right">
-          <p class="section-label">Our Philosophy</p>
-          <h2 class="section-title" id="story-title">Nature as <em>Art</em></h2>
-          <p class="section-sub" style="max-width:100%">We believe every home deserves the transformative power of living botanicals. From our studio in the heart of Cebu City, we curate rare, extraordinary specimens sourced from expert growers worldwide.</p>
-          <p class="section-sub" style="max-width:100%;margin-top:1rem">Our botanists and floral artists work in harmony with nature's rhythms — selecting each plant at its peak, designing arrangements that tell a story, and delivering living beauty right to your door.</p>
-          <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-            <a href="about.html" class="btn btn-primary">Our Story</a>
-            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+          <p class="section-label">About the studio</p>
+          <h2 class="section-title" id="story-title">Grown from a balcony garden in Cebu</h2>
+          <p class="section-sub" style="max-width:100%">Leaf &amp; Bloom began in 2018 when Johnnel Artiaga started sharing carefully potted plants with neighbours in Buhisan. The studio now works across home collections, wedding florals, and workplace planting.</p>
+          <p class="section-sub" style="max-width:100%;margin-top:1rem">We select for Philippine light and living spaces — not catalog glitter. Every arrangement starts with a conversation about the room, the event, and the care it will need.</p>
+          <div style="margin-top:2rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="about.html" class="btn btn-primary">Read our story</a>
+            <a href="contact.html" class="btn btn-outline">Contact the studio</a>
           </div>
         </div>
       </div>
@@ -315,149 +311,108 @@
   </section>
 
   <!-- ── Services Preview ── -->
-  <section class="section" aria-labelledby="services-title">
+  <section class="section home-desktop-only" aria-labelledby="services-title">
     <div class="container">
-      <div style="text-align:center;margin-bottom:3.5rem;">
-        <p class="section-label reveal" style="justify-content:center">What We Offer</p>
-        <h2 class="section-title reveal delay-1" id="services-title">Botanical <em>Services</em></h2>
-        <p class="section-sub reveal delay-2" style="margin:1rem auto 0">From intimate gatherings to grand celebrations, our botanical expertise elevates every space.</p>
+      <div style="margin-bottom:2.5rem;max-width:36rem;">
+        <p class="section-label reveal">Services</p>
+        <h2 class="section-title reveal delay-1" id="services-title">Studio work beyond the shelf</h2>
+        <p class="section-sub reveal delay-2" style="margin:0.75rem 0 0">Florals, weddings, consultations, subscriptions, delivery, and workplace planting — booked through the studio.</p>
       </div>
       <div class="services-grid">
         <div class="service-card reveal delay-1">
-          <div class="service-icon" aria-hidden="true">🌸</div>
-          <h3 class="service-title">Floral Arrangements</h3>
-          <p class="service-desc">Bespoke arrangements crafted from the season's finest blooms — from minimalist elegance to abundant opulence.</p>
-          <a href="services.html" class="service-link">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-spa"></i></div>
+          <h3 class="service-title">Floral arrangements</h3>
+          <p class="service-desc">Seasonal stems for tables, gifts, and quiet rooms — planned with you, tied by hand.</p>
+          <a href="services.html" class="service-link">See florals <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="service-card reveal delay-2">
-          <div class="service-icon" aria-hidden="true">💍</div>
-          <h3 class="service-title">Wedding &amp; Events</h3>
-          <p class="service-desc">Transforming your special moments with breathtaking botanical installations and bespoke floral design.</p>
-          <a href="services.html" class="service-link">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-ring"></i></div>
+          <h3 class="service-title">Wedding &amp; events</h3>
+          <p class="service-desc">Venue florals and installations from consultation through the day of the event.</p>
+          <a href="services.html" class="service-link">See events <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="service-card reveal delay-3">
-          <div class="service-icon" aria-hidden="true">🌿</div>
-          <h3 class="service-title">Plant Consultations</h3>
-          <p class="service-desc">Expert guidance on plant selection, placement, and care — personalised to your space and lifestyle.</p>
-          <a href="services.html" class="service-link">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></div>
+          <h3 class="service-title">Plant consultations</h3>
+          <p class="service-desc">Selection and placement advice matched to your light, space, and care habits.</p>
+          <a href="services.html" class="service-link">See consults <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="service-card reveal delay-4">
-          <div class="service-icon" aria-hidden="true">📦</div>
-          <h3 class="service-title">Plant Subscriptions</h3>
-          <p class="service-desc">Monthly deliveries of curated botanicals. Discover rare and seasonal varieties chosen just for you.</p>
-          <a href="services.html" class="service-link">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-box"></i></div>
+          <h3 class="service-title">Plant subscriptions</h3>
+          <p class="service-desc">Monthly deliveries of curated plants with simple care notes included.</p>
+          <a href="services.html" class="service-link">See plans <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="service-card reveal delay-5">
-          <div class="service-icon" aria-hidden="true">🚚</div>
-          <h3 class="service-title">Premium Delivery</h3>
-          <p class="service-desc">White-glove delivery with careful packaging ensuring every plant arrives in perfect condition.</p>
-          <a href="services.html" class="service-link">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-truck"></i></div>
+          <h3 class="service-title">Delivery</h3>
+          <p class="service-desc">Packed for transit and arranged for handoff across the Philippines.</p>
+          <a href="services.html" class="service-link">Ask about delivery <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="service-card reveal delay-6">
-          <div class="service-icon" aria-hidden="true">🏢</div>
-          <h3 class="service-title">Corporate Styling</h3>
-          <p class="service-desc">Biophilic workplace design that enhances productivity, creativity, and employee wellbeing.</p>
-          <a href="services.html" class="service-link">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-building"></i></div>
+          <h3 class="service-title">Corporate styling</h3>
+          <p class="service-desc">Office planting with install and refresh options for shared workspaces.</p>
+          <a href="services.html" class="service-link">See corporate <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Testimonials ── -->
-  <section class="section bg-cream" aria-labelledby="testimonials-title">
+  <!-- ── Studio notes (honest portfolio copy — no fabricated reviews) ── -->
+  <section class="section bg-cream home-desktop-only" aria-labelledby="testimonials-title">
     <div class="container">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;">
-        <div>
-          <p class="section-label reveal">Client Love</p>
-          <h2 class="section-title reveal delay-1" id="testimonials-title">What They <em>Say</em></h2>
+      <div style="margin-bottom:2rem;max-width:36rem;">
+        <p class="section-label reveal">Studio notes</p>
+        <h2 class="section-title reveal delay-1" id="testimonials-title">How we usually work</h2>
+      </div>
+      <div class="reveal" style="display:grid;gap:0;max-width:40rem;">
+        <div class="studio-note">
+          <h3 class="studio-note-title">Start with the room</h3>
+          <p class="studio-note-text">We ask about light, pets, and how often someone will water — then recommend plants that fit, not just look good in a photo.</p>
         </div>
-        <div class="carousel-controls reveal delay-2" role="group" aria-label="Testimonial controls">
-          <button class="carousel-btn prev" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
-          <div class="carousel-dots" role="tablist">
-            <button class="carousel-dot active" role="tab" aria-label="Testimonial 1" aria-selected="true"></button>
-            <button class="carousel-dot" role="tab" aria-label="Testimonial 2"></button>
-            <button class="carousel-dot" role="tab" aria-label="Testimonial 3"></button>
-            <button class="carousel-dot" role="tab" aria-label="Testimonial 4"></button>
-          </div>
-          <button class="carousel-btn next" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <div class="studio-note">
+          <h3 class="studio-note-title">Florals from a brief</h3>
+          <p class="studio-note-text">Weddings and events begin with a consult. Stems, palette, and scale are set before anything is ordered.</p>
+        </div>
+        <div class="studio-note">
+          <h3 class="studio-note-title">Priced in pesos</h3>
+          <p class="studio-note-text">Shop and service quotes stay in ₱. Delivery and lead times depend on where you are in the Philippines — ask when you enquire.</p>
         </div>
       </div>
-      <div class="testimonials-track" role="list">
-        <div class="testimonial-card" role="listitem">
-          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-          <p class="testimonial-text">"Leaf & Bloom completely transformed our wedding venue. The floral installations were beyond anything we imagined — pure magic. Every guest was in awe."</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sofia Reyes" />
-            <div>
-              <div class="testimonial-name">Sofia Reyes</div>
-              <div class="testimonial-loc">Cebu City — Wedding Client</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card" role="listitem">
-          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-          <p class="testimonial-text">"The monthly plant subscription is the highlight of my month. Each delivery feels like receiving a luxury gift. My apartment has never looked so beautiful."</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Marco Torres" />
-            <div>
-              <div class="testimonial-name">Marco Torres</div>
-              <div class="testimonial-loc">Manila — Subscription Member</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card" role="listitem">
-          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-          <p class="testimonial-text">"Their plant consultation service saved me from so many mistakes. The team is incredibly knowledgeable and passionate. Worth every peso."</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Ana Lim" />
-            <div>
-              <div class="testimonial-name">Ana Lim</div>
-              <div class="testimonial-loc">Davao — Consultation Client</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card" role="listitem">
-          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-          <p class="testimonial-text">"Our office has been completely transformed. Employee morale has noticeably improved and clients always comment on the beautiful botanicals. Exceptional service."</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James Cruz" />
-            <div>
-              <div class="testimonial-name">James Cruz</div>
-              <div class="testimonial-loc">Makati — Corporate Client</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p class="reveal" style="margin-top:1.5rem;font-size:0.875rem;color:var(--clr-text-lt);">
+        Prefer to leave a note? <a href="feedback.html" style="color:var(--clr-primary);text-decoration:underline;text-underline-offset:3px;">Use the feedback form</a>
+      </p>
     </div>
   </section>
 
   <!-- ── Gallery ── -->
-  <section class="section" aria-labelledby="gallery-title">
+  <section class="section home-desktop-only" aria-labelledby="gallery-title">
     <div class="container">
-      <div style="text-align:center;margin-bottom:2.5rem;">
-        <p class="section-label reveal" style="justify-content:center">@leafandbloom</p>
-        <h2 class="section-title reveal delay-1" id="gallery-title">Living <em>Gallery</em></h2>
-        <p class="section-sub reveal delay-2" style="margin:1rem auto 0">Follow our daily botanical journey on Instagram.</p>
+      <div style="margin-bottom:2rem;max-width:36rem;">
+        <p class="section-label reveal">On Instagram</p>
+        <h2 class="section-title reveal delay-1" id="gallery-title">From the workbench</h2>
+        <p class="section-sub reveal delay-2" style="margin:0.75rem 0 0">Recent plant and floral work — follow the studio for new pieces.</p>
       </div>
       <div class="gallery-grid reveal">
         <a href="https://www.instagram.com/jow_neeel/" target="_blank" class="gallery-item" aria-label="Instagram post 1">
-          <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop&q=80" alt="Botanical arrangement" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&auto=format&fit=crop&q=80" alt="Potting bench with soil and tools" loading="lazy" />
           <div class="gallery-item-overlay" aria-hidden="true"><i class="fa-brands fa-instagram gallery-ig"></i></div>
         </a>
         <a href="https://www.instagram.com/jow_neeel/" target="_blank" class="gallery-item" aria-label="Instagram post 2">
-          <img src="https://images.unsplash.com/photo-1527642220350-24155bae0505?w=500&auto=format&fit=crop&q=80" alt="Plant pots" loading="lazy" />
+          <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pink ranunculus blooms" loading="lazy" />
           <div class="gallery-item-overlay" aria-hidden="true"><i class="fa-brands fa-instagram gallery-ig"></i></div>
         </a>
         <a href="https://www.instagram.com/jow_neeel/" target="_blank" class="gallery-item" aria-label="Instagram post 3">
-          <img src="https://plus.unsplash.com/premium_photo-1749886489914-559cee3de4d0?w=500&auto=format&fit=crop&q=80" alt="Botanical studio" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&auto=format&fit=crop&q=80" alt="Potted cactus on pink backdrop" loading="lazy" />
           <div class="gallery-item-overlay" aria-hidden="true"><i class="fa-brands fa-instagram gallery-ig"></i></div>
         </a>
         <a href="https://www.instagram.com/jow_neeel/" target="_blank" class="gallery-item" aria-label="Instagram post 4">
-          <img src="https://images.unsplash.com/photo-1701271040533-59a76ac4e887?w=500&auto=format&fit=crop&q=80" alt="Floral arrangement" loading="lazy" />
+          <img src="https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lush green leaves with dew" loading="lazy" />
           <div class="gallery-item-overlay" aria-hidden="true"><i class="fa-brands fa-instagram gallery-ig"></i></div>
         </a>
         <a href="https://www.instagram.com/jow_neeel/" target="_blank" class="gallery-item" aria-label="Instagram post 5">
-          <img src="https://plus.unsplash.com/premium_photo-1682716387370-b263d655d108?w=500&auto=format&fit=crop&q=80" alt="Plant collection" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?w=800&auto=format&fit=crop&q=80" alt="Calathea striped foliage" loading="lazy" />
           <div class="gallery-item-overlay" aria-hidden="true"><i class="fa-brands fa-instagram gallery-ig"></i></div>
         </a>
       </div>
@@ -465,16 +420,16 @@
   </section>
 
   <!-- ── Newsletter ── -->
-  <section class="section-sm" aria-labelledby="newsletter-title">
+  <section class="section-sm home-desktop-only" aria-labelledby="newsletter-title">
     <div class="container">
       <div class="newsletter reveal">
         <div class="newsletter-inner">
-          <p style="font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">Join the Community</p>
-          <h2 class="newsletter-title" id="newsletter-title">Bloom in Your Inbox</h2>
-          <p class="newsletter-sub">Seasonal collections, care guides, exclusive offers, and botanical inspiration delivered monthly.</p>
+          <p style="font-size:0.875rem;color:rgba(250,248,243,0.65);margin-bottom:0.5rem;">Studio list</p>
+          <h2 class="newsletter-title" id="newsletter-title">New plants and care notes</h2>
+          <p class="newsletter-sub">Occasional email when the collection changes — no daily noise.</p>
           <form class="newsletter-form" novalidate aria-label="Newsletter signup">
-            <input type="email" placeholder="Your email address" required aria-label="Email address" autocomplete="email" />
-            <button type="submit" class="btn">Subscribe</button>
+            <input type="email" placeholder="Email" required aria-label="Email address" autocomplete="email" />
+            <button type="submit" class="btn">Join</button>
           </form>
         </div>
       </div>
@@ -489,7 +444,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Leaf &amp; Bloom</div>
-        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into your home, workplace, and most treasured moments.</p>
+        <p class="footer-about">Botanical studio in Cebu for plants, florals, and event styling — priced in pesos.</p>
         <div class="footer-social" aria-label="Social media links">
           <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -497,7 +452,7 @@
           <a href="https://www.tiktok.com/@callmeweird06" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
       </div>
-      <div>
+      <div class="footer-col-desktop">
         <p class="footer-heading">Navigate</p>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
@@ -508,7 +463,7 @@
           <li><a href="feedback.html">Feedback</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col-desktop">
         <p class="footer-heading">Collections</p>
         <ul class="footer-links">
           <li><a href="products.html">Tropical Plants</a></li>
@@ -519,23 +474,23 @@
           <li><a href="products.html">Rare Finds</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col-desktop">
         <p class="footer-heading">Contact Us</p>
         <ul class="footer-links" style="gap:0.9rem;">
-          <li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">📍 Buhisan, Dulhugan, Cebu City</li>
-          <li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li>
-          <li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li>
-          <li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">🕐 Mon–Sat, 9AM–6PM</li>
+          <li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">Buhisan, Dulhugan, Cebu City</li>
+          <li><a href="tel:+639171234567">+63 917 123 4567</a></li>
+          <li><a href="mailto:hello@leafandbloom.ph">hello@leafandbloom.ph</a></li>
+          <li style="color:rgba(250,248,245,0.5);font-size:0.85rem;">Mon–Sat, 9AM–6PM</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Leaf &amp; Bloom. All rights reserved.</span>
-      <span>Crafted with 🌿 in the Philippines</span>
+      <span>Studio in Cebu, Philippines</span>
     </div>
   </div>
 </footer>
 
-<script src="./js/script.js"></script>
+<script src="./js/script.js?v=no-people"></script>
 </body>
 </html>

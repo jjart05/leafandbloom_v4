@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>#loader{display:none!important}</style>
+<script>
+  try {
+    if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
+  } catch (e) {}
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shop — Leaf &amp; Bloom</title>
@@ -8,7 +15,7 @@
   <meta name="description" content="Browse our premium collection of rare plants, orchids, tropical specimens, and curated floral arrangements." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v=plus15" />
 </head>
 <body>
 
@@ -64,7 +71,9 @@
 <div id="quick-view-modal" role="dialog" aria-modal="true">
   <div class="modal-backdrop"></div>
   <div class="modal-content">
-    <img class="modal-img" src="" alt="" />
+    <div class="modal-media">
+      <img class="modal-img" src="" alt="" />
+    </div>
     <div class="modal-body">
       <button class="modal-close">✕</button>
       <p class="modal-category"></p>
@@ -97,9 +106,9 @@
       <div class="breadcrumb">
         <a href="index.html">Home</a><span>/</span><span>Shop</span>
       </div>
-      <p class="section-label reveal">Premium Collection</p>
-      <h1 class="page-header-title reveal delay-1">The <em>Botanical</em> Shop</h1>
-      <p class="section-sub reveal delay-2">Hand-selected specimens and artisan arrangements — each one extraordinary.</p>
+      <p class="section-label reveal">Shop</p>
+      <h1 class="page-header-title reveal delay-1">Plants and florals</h1>
+      <p class="section-sub reveal delay-2">Potted plants and arrangements priced in pesos — browse by category below.</p>
     </div>
   </section>
 
@@ -141,7 +150,7 @@
 
         <article class="product-card reveal delay-1" data-product-id="1" data-category="tropical">
           <div class="product-img-wrap">
-            <span class="product-badge gold">Best Seller</span>
+            <span class="product-badge">Often chosen</span>
             <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?q=80&w=435&auto=format&fit=crop" alt="Monstera Deliciosa" loading="lazy" />
             <div class="product-overlay">
               <button class="product-overlay-btn">Quick View</button>
@@ -210,7 +219,7 @@
           <div class="product-body">
             <p class="product-category">Orchid</p>
             <h3 class="product-name">White Phalaenopsis</h3>
-            <p class="product-desc">Pure cascading blooms — the definition of timeless elegance.</p>
+            <p class="product-desc">White phalaenopsis with cascading blooms.</p>
             <div class="product-footer">
               <span class="product-price">₱2,200 <span class="product-price-old">₱2,800</span></span>
               <button class="product-add" aria-label="Add to cart"><i class="fa-solid fa-plus"></i></button>
@@ -220,7 +229,7 @@
 
         <article class="product-card reveal delay-2" data-product-id="5" data-category="orchid">
           <div class="product-img-wrap">
-            <span class="product-badge gold">Premium</span>
+            <span class="product-badge">Featured</span>
             <img src="https://images.unsplash.com/photo-1632906379687-355e24798632?q=80&w=1073&auto=format&fit=crop" alt="Pink Anthurium" loading="lazy" />
             <div class="product-overlay">
               <button class="product-overlay-btn">Quick View</button>
@@ -317,7 +326,7 @@
 
         <article class="product-card reveal delay-2" data-product-id="10" data-category="fern">
           <div class="product-img-wrap">
-            <span class="product-badge gold">Popular</span>
+            <span class="product-badge">Popular</span>
             <img src="https://images.unsplash.com/photo-1763060819223-b92eb0ca6e4d?q=80&w=1173&auto=format&fit=crop" alt="Golden Pothos" loading="lazy" />
             <div class="product-overlay">
               <button class="product-overlay-btn">Quick View</button>
@@ -327,7 +336,7 @@
           <div class="product-body">
             <p class="product-category">Foliage</p>
             <h3 class="product-name">Golden Pothos</h3>
-            <p class="product-desc">Trailing golden-green vines — effortlessly beautiful and nearly indestructible.</p>
+            <p class="product-desc">Trailing golden-green pothos for shelves and hangers.</p>
             <div class="product-footer">
               <span class="product-price">₱450</span>
               <button class="product-add" aria-label="Add to cart"><i class="fa-solid fa-plus"></i></button>
@@ -337,7 +346,7 @@
 
         <article class="product-card reveal delay-1" data-product-id="11" data-category="arrangement">
           <div class="product-img-wrap">
-            <span class="product-badge gold">Luxury</span>
+            <span class="product-badge">Statement</span>
             <img src="https://plus.unsplash.com/premium_photo-1674581211991-bd10fa5137bf?q=80&w=880&auto=format&fit=crop" alt="Signature Bouquet" loading="lazy" />
             <div class="product-overlay">
               <button class="product-overlay-btn">Quick View</button>
@@ -366,7 +375,7 @@
           <div class="product-body">
             <p class="product-category">Arrangement</p>
             <h3 class="product-name">Wild Garden Vase</h3>
-            <p class="product-desc">An effortlessly wild arrangement — meadow blooms and botanical branches.</p>
+            <p class="product-desc">Loose meadow blooms and branches in a vase.</p>
             <div class="product-footer">
               <span class="product-price">₱2,600</span>
               <button class="product-add" aria-label="Add to cart"><i class="fa-solid fa-plus"></i></button>
@@ -376,7 +385,7 @@
 
         <article class="product-card reveal delay-1" data-product-id="13" data-category="rare">
           <div class="product-img-wrap">
-            <span class="product-badge" style="background:#6B4E8A">Rare</span>
+            <span class="product-badge">Limited</span>
             <img src="https://images.unsplash.com/photo-1684738054008-6fcab69c48b0?w=500&auto=format&fit=crop" alt="Variegated Monstera" loading="lazy" />
             <div class="product-overlay">
               <button class="product-overlay-btn">Quick View</button>
@@ -396,7 +405,7 @@
 
         <article class="product-card reveal delay-2" data-product-id="14" data-category="rare">
           <div class="product-img-wrap">
-            <span class="product-badge" style="background:#6B4E8A">Rare</span>
+            <span class="product-badge">Limited</span>
             <img src="https://images.unsplash.com/photo-1666071016865-9a2c93dd880c?w=500&auto=format&fit=crop" alt="Black Bat Flower" loading="lazy" />
             <div class="product-overlay">
               <button class="product-overlay-btn">Quick View</button>
@@ -414,11 +423,496 @@
           </div>
         </article>
 
+        <article class="product-card reveal delay-1" data-product-id="15" data-category="tropical">
+          <div class="product-img-wrap">
+            <span class="product-badge">Popular</span>
+            <img src="https://images.pexels.com/photos/2123482/pexels-photo-2123482.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Snake Plant Laurentii" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical</p>
+            <h3 class="product-name">Snake Plant Laurentii</h3>
+            <p class="product-desc">Upright yellow-edged leaves. Handles low light and infrequent watering.</p>
+            <div class="product-footer">
+              <span class="product-price">₱890</span>
+              <button class="product-add" aria-label="Add Snake Plant Laurentii to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="16" data-category="tropical">
+          <div class="product-img-wrap">
+            <img src="https://images.pexels.com/photos/7349006/pexels-photo-7349006.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Bird's Nest Snake Plant" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical</p>
+            <h3 class="product-name">Bird's Nest Snake Plant</h3>
+            <p class="product-desc">Compact Sansevieria Hahnii — a desk-size plant for bright, filtered light.</p>
+            <div class="product-footer">
+              <span class="product-price">₱650</span>
+              <button class="product-add" aria-label="Add Bird's Nest Snake Plant to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-3" data-product-id="17" data-category="tropical">
+          <div class="product-img-wrap">
+            <span class="product-badge">New</span>
+            <img src="https://images.pexels.com/photos/7862172/pexels-photo-7862172.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Peace Lily" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical</p>
+            <h3 class="product-name">Peace Lily</h3>
+            <p class="product-desc">Glossy foliage with white spathes. Prefers shade and steady moisture.</p>
+            <div class="product-footer">
+              <span class="product-price">₱1,250</span>
+              <button class="product-add" aria-label="Add Peace Lily to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="18" data-category="tropical">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?q=80&w=1200&auto=format&fit=crop" alt="Calathea Orbifolia" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical</p>
+            <h3 class="product-name">Calathea Orbifolia</h3>
+            <p class="product-desc">Broad silver-striped leaves. Best in humid rooms away from direct sun.</p>
+            <div class="product-footer">
+              <span class="product-price">₱1,650</span>
+              <button class="product-add" aria-label="Add Calathea Orbifolia to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="24" data-category="tropical">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop" alt="Rubber Plant" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical</p>
+            <h3 class="product-name">Rubber Plant</h3>
+            <p class="product-desc">Thick waxy leaves on a clean stem. Bright, indirect light indoors.</p>
+            <div class="product-footer">
+              <span class="product-price">₱1,450</span>
+              <button class="product-add" aria-label="Add Rubber Plant to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="19" data-category="fern">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1572688484438-313a6e50c333?q=80&w=1200&auto=format&fit=crop" alt="Spider Plant" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Ferns &amp; Foliage</p>
+            <h3 class="product-name">Spider Plant</h3>
+            <p class="product-desc">Arching variegated leaves that send out plantlets. Easy shelf plant.</p>
+            <div class="product-footer">
+              <span class="product-price">₱520</span>
+              <button class="product-add" aria-label="Add Spider Plant to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="20" data-category="fern">
+          <div class="product-img-wrap">
+            <img src="https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Neon Pothos" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Ferns &amp; Foliage</p>
+            <h3 class="product-name">Neon Pothos</h3>
+            <p class="product-desc">Bright chartreuse trailing vines for shelves, hangers, or cabinets.</p>
+            <div class="product-footer">
+              <span class="product-price">₱550</span>
+              <button class="product-add" aria-label="Add Neon Pothos to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="21" data-category="succulent">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?q=80&w=1200&auto=format&fit=crop" alt="Lace Aloe" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Succulents</p>
+            <h3 class="product-name">Lace Aloe</h3>
+            <p class="product-desc">Speckled rosette succulent. Water sparingly; bright light preferred.</p>
+            <div class="product-footer">
+              <span class="product-price">₱480</span>
+              <button class="product-add" aria-label="Add Lace Aloe to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="22" data-category="succulent">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1200&auto=format&fit=crop" alt="Columnar Cactus" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Succulents</p>
+            <h3 class="product-name">Columnar Cactus</h3>
+            <p class="product-desc">Tall ribbed cactus for sunny windowsills. Minimal weekly care.</p>
+            <div class="product-footer">
+              <span class="product-price">₱690</span>
+              <button class="product-add" aria-label="Add Columnar Cactus to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-3" data-product-id="23" data-category="rare">
+          <div class="product-img-wrap">
+            <span class="product-badge">Featured</span>
+            <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=1200&auto=format&fit=crop" alt="Ficus Ginseng" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Rare Finds</p>
+            <h3 class="product-name">Ficus Ginseng</h3>
+            <p class="product-desc">Sculptural bonsai-form ficus with thick roots and dense canopy.</p>
+            <div class="product-footer">
+              <span class="product-price">₱3,200</span>
+              <button class="product-add" aria-label="Add Ficus Ginseng to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="25" data-category="tropical">
+          <div class="product-img-wrap">
+            <span class="product-badge">New</span>
+            <img src="https://images.pexels.com/photos/6208086/pexels-photo-6208086.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Dracaena Marginata" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical Plants</p>
+            <h3 class="product-name">Dracaena Marginata</h3>
+            <p class="product-desc">Slender red-edged leaves on a tall cane. Good for bright corners.</p>
+            <div class="product-footer">
+              <span class="product-price">₱1,350</span>
+              <button class="product-add" aria-label="Add Dracaena Marginata to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="26" data-category="tropical">
+          <div class="product-img-wrap">
+            <img src="https://images.pexels.com/photos/3125195/pexels-photo-3125195.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Areca Palm" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical Plants</p>
+            <h3 class="product-name">Areca Palm</h3>
+            <p class="product-desc">Feathery fronds that soften living rooms. Prefers bright, filtered light.</p>
+            <div class="product-footer">
+              <span class="product-price">₱2,100</span>
+              <button class="product-add" aria-label="Add Areca Palm to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-3" data-product-id="27" data-category="tropical">
+          <div class="product-img-wrap">
+            <span class="product-badge">Popular</span>
+            <img src="https://images.pexels.com/photos/4503273/pexels-photo-4503273.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Chinese Money Plant" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical Plants</p>
+            <h3 class="product-name">Chinese Money Plant</h3>
+            <p class="product-desc">Round coin-like leaves on upright stems. Easy desk or shelf plant.</p>
+            <div class="product-footer">
+              <span class="product-price">₱780</span>
+              <button class="product-add" aria-label="Add Chinese Money Plant to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="28" data-category="succulent">
+          <div class="product-img-wrap">
+            <img src="https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="String of Pearls" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Succulents</p>
+            <h3 class="product-name">String of Pearls</h3>
+            <p class="product-desc">Trailing bead-like foliage for hanging pots. Water sparingly.</p>
+            <div class="product-footer">
+              <span class="product-price">₱620</span>
+              <button class="product-add" aria-label="Add String of Pearls to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="29" data-category="succulent">
+          <div class="product-img-wrap">
+            <img src="https://images.pexels.com/photos/1022922/pexels-photo-1022922.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Haworthia Cluster" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Succulents</p>
+            <h3 class="product-name">Haworthia Cluster</h3>
+            <p class="product-desc">Compact striped rosettes. Ideal for sunny windowsills.</p>
+            <div class="product-footer">
+              <span class="product-price">₱540</span>
+              <button class="product-add" aria-label="Add Haworthia Cluster to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-3" data-product-id="30" data-category="fern">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?q=80&w=1400&auto=format&fit=crop" alt="Soft Fern Basket" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Ferns &amp; Foliage</p>
+            <h3 class="product-name">Soft Fern Basket</h3>
+            <p class="product-desc">Full, feathery fronds in a ready basket. Likes humidity and shade.</p>
+            <div class="product-footer">
+              <span class="product-price">₱890</span>
+              <button class="product-add" aria-label="Add Soft Fern Basket to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="31" data-category="fern">
+          <div class="product-img-wrap">
+            <span class="product-badge">Featured</span>
+            <img src="https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Staghorn Fern" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Ferns &amp; Foliage</p>
+            <h3 class="product-name">Staghorn Fern</h3>
+            <p class="product-desc">Mounted antler-like fronds. A sculptural piece for walls or stands.</p>
+            <div class="product-footer">
+              <span class="product-price">₱1,750</span>
+              <button class="product-add" aria-label="Add Staghorn Fern to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="32" data-category="orchid">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1710524784485-5c77ae822ecc?q=80&w=1400&auto=format&fit=crop" alt="Blush Orchid Spray" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Orchids</p>
+            <h3 class="product-name">Blush Orchid Spray</h3>
+            <p class="product-desc">Soft pink orchid blooms on graceful stems. Gift-ready potting.</p>
+            <div class="product-footer">
+              <span class="product-price">₱1,950</span>
+              <button class="product-add" aria-label="Add Blush Orchid Spray to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-3" data-product-id="33" data-category="orchid">
+          <div class="product-img-wrap">
+            <span class="product-badge">New</span>
+            <img src="https://images.pexels.com/photos/1084189/pexels-photo-1084189.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Yellow Dancing Orchid" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Orchids</p>
+            <h3 class="product-name">Yellow Dancing Orchid</h3>
+            <p class="product-desc">Bright oncidium sprays with lively yellow petals.</p>
+            <div class="product-footer">
+              <span class="product-price">₱1,680</span>
+              <button class="product-add" aria-label="Add Yellow Dancing Orchid to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="34" data-category="arrangement">
+          <div class="product-img-wrap">
+            <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Classic White Bouquet" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Arrangements</p>
+            <h3 class="product-name">Classic White Bouquet</h3>
+            <p class="product-desc">Clean white blooms hand-tied for tables, vows, and quiet rooms.</p>
+            <div class="product-footer">
+              <span class="product-price">₱2,900</span>
+              <button class="product-add" aria-label="Add Classic White Bouquet to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="35" data-category="arrangement">
+          <div class="product-img-wrap">
+            <span class="product-badge">Popular</span>
+            <img src="https://images.pexels.com/photos/1470171/pexels-photo-1470171.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Meadow Wildflower Vase" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Arrangements</p>
+            <h3 class="product-name">Meadow Wildflower Vase</h3>
+            <p class="product-desc">Loose seasonal wildflowers in a studio vase. Soft and informal.</p>
+            <div class="product-footer">
+              <span class="product-price">₱2,450</span>
+              <button class="product-add" aria-label="Add Meadow Wildflower Vase to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-3" data-product-id="36" data-category="arrangement">
+          <div class="product-img-wrap">
+            <img src="https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Eucalyptus Bloom Bundle" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Arrangements</p>
+            <h3 class="product-name">Eucalyptus Bloom Bundle</h3>
+            <p class="product-desc">Fragrant eucalyptus with seasonal stems — lasting greenery accent.</p>
+            <div class="product-footer">
+              <span class="product-price">₱2,200</span>
+              <button class="product-add" aria-label="Add Eucalyptus Bloom Bundle to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-product-id="37" data-category="rare">
+          <div class="product-img-wrap">
+            <span class="product-badge rare">Rare</span>
+            <img src="https://images.pexels.com/photos/6208087/pexels-photo-6208087.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Alocasia Amazonica" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Rare Finds</p>
+            <h3 class="product-name">Alocasia Amazonica</h3>
+            <p class="product-desc">Dramatic white-veined leaves. Loves humidity and bright shade.</p>
+            <div class="product-footer">
+              <span class="product-price">₱2,800</span>
+              <button class="product-add" aria-label="Add Alocasia Amazonica to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-product-id="38" data-category="rare">
+          <div class="product-img-wrap">
+            <span class="product-badge rare">Rare</span>
+            <img src="https://images.unsplash.com/photo-1632906379687-355e24798632?q=80&w=1400&auto=format&fit=crop" alt="Velvet Leaf Anthurium" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Rare Finds</p>
+            <h3 class="product-name">Velvet Leaf Anthurium</h3>
+            <p class="product-desc">Deep velvet foliage with pale veins. Collector-favored houseplant.</p>
+            <div class="product-footer">
+              <span class="product-price">₱4,200</span>
+              <button class="product-add" aria-label="Add Velvet Leaf Anthurium to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-3" data-product-id="39" data-category="tropical">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=1400&auto=format&fit=crop" alt="Sweetheart Hoya" loading="lazy" />
+            <div class="product-overlay">
+              <button class="product-overlay-btn">Quick View</button>
+              <button class="product-overlay-btn product-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-category">Tropical Plants</p>
+            <h3 class="product-name">Sweetheart Hoya</h3>
+            <p class="product-desc">Heart-shaped succulent leaves. Compact gift plant for shelves.</p>
+            <div class="product-footer">
+              <span class="product-price">₱720</span>
+              <button class="product-add" aria-label="Add Sweetheart Hoya to cart"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
       </div><!-- /.products-grid -->
 
       <!-- Empty State -->
       <div id="no-results" style="display:none;text-align:center;padding:4rem 2rem;">
-        <div style="font-size:3rem;margin-bottom:1rem;opacity:0.3">🌿</div>
+        <div style="font-size:1rem;margin-bottom:1rem;opacity:0.5;font-family:var(--font-display)">No matches</div>
         <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:0.5rem;">No plants found</h3>
         <p style="color:var(--clr-text-mid);font-size:0.9rem;">Try a different search term or filter.</p>
       </div>
@@ -453,7 +947,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Leaf &amp; Bloom</div>
-        <p class="footer-about">A luxury botanical studio dedicated to bringing the art of nature into every space.</p>
+        <p class="footer-about">A Cebu botanical studio for plants, florals, and event work across the Philippines.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/jow_neeel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/johnn.artiaga05" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -462,100 +956,193 @@
       </div>
       <div><p class="footer-heading">Navigate</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Shop</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
       <div><p class="footer-heading">Collections</p><ul class="footer-links"><li><a href="products.html">Tropical Plants</a></li><li><a href="products.html">Orchids</a></li><li><a href="products.html">Succulents</a></li><li><a href="products.html">Rare Finds</a></li></ul></div>
-      <div><p class="footer-heading">Contact</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem">📍 Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">📞 +63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">✉ hello@leafandbloom.ph</a></li></ul></div>
+      <div><p class="footer-heading">Contact</p><ul class="footer-links" style="gap:0.9rem;"><li style="color:rgba(250,248,245,0.5);font-size:0.85rem">Buhisan, Dulhugan, Cebu City</li><li><a href="tel:+639171234567">+63 917 123 4567</a></li><li><a href="mailto:hello@leafandbloom.ph">hello@leafandbloom.ph</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Crafted with 🌿 in the Philippines</span></div>
+    <div class="footer-bottom"><span>© 2026 Leaf &amp; Bloom. All rights reserved.</span><span>Studio in Cebu, Philippines</span></div>
   </div>
 </footer>
 
-<script src="./js/script.js"></script>
+<script src="./js/script.js?v=no-people"></script>
 <script>
-// Product search + sort — fully featured
+// Product search + sort — smooth filter transitions
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('product-search');
   const sortSelect  = document.getElementById('sort-select');
   const grid        = document.getElementById('products-grid');
   const noResults   = document.getElementById('no-results');
+  if (!grid) return;
 
-  // Popularity order (index = sell rank, lower = more popular)
   const POPULARITY = [
-    'Monstera Deliciosa','Pink Anthurium','White Phalaenopsis','Golden Pothos',
-    'Boston Fern','Fiddle Leaf Fig','Bird of Paradise','Curated Succulent Set',
-    'The Signature Bouquet','Geometric Terrarium','Purple Dendrobium',
-    'Wild Garden Vase','Black Bat Flower','Variegated Monstera'
+    'Monstera Deliciosa','Chinese Money Plant','Pink Anthurium','Meadow Wildflower Vase',
+    'White Phalaenopsis','Golden Pothos','Boston Fern','Fiddle Leaf Fig',
+    'Bird of Paradise','Curated Succulent Set','The Signature Bouquet','Geometric Terrarium',
+    'Purple Dendrobium','Wild Garden Vase','Black Bat Flower','Variegated Monstera'
   ];
 
-  // Newest order (index = newest first)
   const NEWEST = [
+    'Dracaena Marginata','Yellow Dancing Orchid','Alocasia Amazonica','Velvet Leaf Anthurium',
+    'Staghorn Fern','Areca Palm','Blush Orchid Spray','Classic White Bouquet',
     'Fiddle Leaf Fig','Pink Anthurium','Geometric Terrarium','Purple Dendrobium',
-    'Wild Garden Vase','Bird of Paradise','Golden Pothos','Curated Succulent Set',
-    'White Phalaenopsis','Monstera Deliciosa','Boston Fern',
-    'The Signature Bouquet','Black Bat Flower','Variegated Monstera'
+    'Wild Garden Vase','Bird of Paradise','Golden Pothos','Curated Succulent Set'
   ];
 
-  // Store original DOM order for "Featured" reset
   const allCards = [...grid.querySelectorAll('.product-card')];
   const originalOrder = [...allCards];
+  const OUT_MS = 280;
+  let filterToken = 0;
+  let filterTimer = null;
 
   function getPrice(card) {
     const priceEl = card.querySelector('.product-price');
     if (!priceEl) return 0;
-    // Get only text nodes (exclude old price span)
     let txt = '';
     priceEl.childNodes.forEach(n => { if (n.nodeType === Node.TEXT_NODE) txt += n.textContent; });
     const m = txt.replace(/[₱,\s]/g, '').match(/^(\d+)/);
-    return m ? parseInt(m[1]) : 0;
+    return m ? parseInt(m[1], 10) : 0;
   }
 
   function getName(card) {
     return card.querySelector('.product-name')?.textContent.trim() || '';
   }
 
-  function filterAndSort() {
-    const query       = searchInput.value.toLowerCase().trim();
-    const sort        = sortSelect.value;
+  function getVisibleCards() {
+    const query = (searchInput?.value || '').toLowerCase().trim();
+    const sort = sortSelect?.value || 'default';
     const activeFilter = document.querySelector('.filter-tab.active')?.dataset.filter || 'all';
 
-    // Determine which cards match filters
     let visible = allCards.filter(card => {
-      const catMatch    = activeFilter === 'all' || card.dataset.category === activeFilter;
-      const name        = getName(card).toLowerCase();
-      const cat         = card.querySelector('.product-category')?.textContent.toLowerCase() || '';
+      const catMatch = activeFilter === 'all' || card.dataset.category === activeFilter;
+      const name = getName(card).toLowerCase();
+      const cat = card.querySelector('.product-category')?.textContent.toLowerCase() || '';
       const searchMatch = !query || name.includes(query) || cat.includes(query);
       return catMatch && searchMatch;
     });
 
-    // Sort the visible set
     visible.sort((a, b) => {
-      const pa = getPrice(a), pb = getPrice(b);
-      const na = getName(a),   nb = getName(b);
+      const pa = getPrice(a);
+      const pb = getPrice(b);
+      const na = getName(a);
+      const nb = getName(b);
       switch (sort) {
-        case 'price-asc':  return pa - pb;
+        case 'price-asc': return pa - pb;
         case 'price-desc': return pb - pa;
-        case 'name-asc':   return na.localeCompare(nb);
-        case 'name-desc':  return nb.localeCompare(na);
-        case 'newest':     return (NEWEST.indexOf(na) === -1 ? 99 : NEWEST.indexOf(na)) - (NEWEST.indexOf(nb) === -1 ? 99 : NEWEST.indexOf(nb));
-        case 'popular':    return (POPULARITY.indexOf(na) === -1 ? 99 : POPULARITY.indexOf(na)) - (POPULARITY.indexOf(nb) === -1 ? 99 : POPULARITY.indexOf(nb));
-        default:           return originalOrder.indexOf(a) - originalOrder.indexOf(b);
+        case 'name-asc': return na.localeCompare(nb);
+        case 'name-desc': return nb.localeCompare(na);
+        case 'newest':
+          return (NEWEST.indexOf(na) === -1 ? 99 : NEWEST.indexOf(na))
+            - (NEWEST.indexOf(nb) === -1 ? 99 : NEWEST.indexOf(nb));
+        case 'popular':
+          return (POPULARITY.indexOf(na) === -1 ? 99 : POPULARITY.indexOf(na))
+            - (POPULARITY.indexOf(nb) === -1 ? 99 : POPULARITY.indexOf(nb));
+        default:
+          return originalOrder.indexOf(a) - originalOrder.indexOf(b);
       }
     });
 
-    // Hide all, then re-append sorted visible cards into grid
-    allCards.forEach(c => { c.style.display = 'none'; });
-    visible.forEach(c => {
-      c.style.display = '';
-      grid.appendChild(c); // reorder in DOM
-    });
-
-    noResults.style.display = visible.length === 0 ? 'block' : 'none';
+    return visible;
   }
 
-  searchInput?.addEventListener('input', filterAndSort);
-  sortSelect?.addEventListener('change', filterAndSort);
+  function isCardShown(card) {
+    return !card.classList.contains('is-filter-hidden') && card.style.display !== 'none';
+  }
 
-  // Override filter tabs to also trigger re-sort
+  function applyVisibleOrder(visible, entering) {
+    const enteringSet = new Set(entering);
+    visible.forEach((card, i) => {
+      card.classList.remove('is-filter-hidden', 'is-filter-out');
+      card.style.display = '';
+      if (enteringSet.has(card)) {
+        card.classList.remove('revealed');
+        card.style.setProperty('--filter-stagger', `${Math.min(i, 10) * 40}ms`);
+        card.classList.add('is-filter-enter');
+      } else {
+        card.style.removeProperty('--filter-stagger');
+        card.classList.remove('is-filter-enter');
+      }
+      grid.appendChild(card);
+    });
+
+    if (entering.length) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          entering.forEach(card => card.classList.remove('is-filter-enter'));
+          if (typeof observeReveal === 'function') observeReveal(entering);
+          else entering.forEach(card => card.classList.add('revealed'));
+        });
+      });
+    }
+
+    if (noResults) noResults.style.display = visible.length === 0 ? 'block' : 'none';
+  }
+
+  function filterAndSort(options = {}) {
+    const animate = options.animate !== false;
+    const token = ++filterToken;
+    clearTimeout(filterTimer);
+
+    const visible = getVisibleCards();
+    const visibleSet = new Set(visible);
+    const currentlyShown = allCards.filter(isCardShown);
+    const currentlyShownSet = new Set(currentlyShown);
+    const leaving = currentlyShown.filter(card => !visibleSet.has(card));
+    const entering = visible.filter(card => !currentlyShownSet.has(card));
+
+    if (!animate) {
+      allCards.forEach(card => {
+        card.classList.remove('is-filter-out', 'is-filter-enter');
+        card.style.removeProperty('--filter-stagger');
+        if (visibleSet.has(card)) {
+          card.classList.remove('is-filter-hidden');
+          card.style.display = '';
+        } else {
+          card.classList.add('is-filter-hidden');
+          card.style.display = 'none';
+        }
+      });
+      visible.forEach(card => grid.appendChild(card));
+      if (noResults) noResults.style.display = visible.length === 0 ? 'block' : 'none';
+      return;
+    }
+
+    /* Only fade out cards that are actually leaving — keep stayers put */
+    leaving.forEach(card => {
+      card.style.removeProperty('--filter-stagger');
+      card.classList.add('is-filter-out');
+    });
+    currentlyShown
+      .filter(card => visibleSet.has(card))
+      .forEach(card => {
+        card.classList.remove('is-filter-out', 'is-filter-enter');
+        card.style.removeProperty('--filter-stagger');
+      });
+
+    const finish = () => {
+      if (token !== filterToken) return;
+
+      leaving.forEach(card => {
+        card.classList.add('is-filter-hidden');
+        card.classList.remove('is-filter-out', 'is-filter-enter');
+        card.style.display = 'none';
+      });
+
+      applyVisibleOrder(visible, entering);
+    };
+
+    if (leaving.length) {
+      filterTimer = setTimeout(finish, OUT_MS);
+    } else {
+      finish();
+    }
+  }
+
+  searchInput?.addEventListener('input', () => filterAndSort({ animate: true }));
+  sortSelect?.addEventListener('change', () => filterAndSort({ animate: false }));
+
   document.querySelectorAll('.filter-tab').forEach(tab => {
-    tab.addEventListener('click', () => setTimeout(filterAndSort, 0));
+    tab.addEventListener('click', () => {
+      /* Wait one tick so .active is set, then animate once */
+      setTimeout(() => filterAndSort({ animate: true }), 0);
+    });
   });
 });
 </script>
