@@ -5,6 +5,7 @@
 <script>
   try {
     if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    document.documentElement.classList.add('lb-js');
     if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
   } catch (e) {}
 </script>
@@ -15,7 +16,7 @@
   <meta name="description" content="Share your feedback about Leaf & Bloom. We'd love to hear your thoughts and suggestions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css?v=scroll-reveal" />
+  <link rel="stylesheet" href="./css/style.css?v=modern-v1" />
   <style>
     /* Feedback-specific styles */
     .feedback-wrap { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: 2.5rem; box-sizing: border-box; width: 100%; overflow: hidden; }
@@ -258,7 +259,7 @@
   </div>
 </footer>
 
-<script src="./js/script.js?v=no-people"></script>
+<script src="./js/script.js?v=modern-v1"></script>
 <script>
 // Wire up star hint text in feedback page
 document.addEventListener('DOMContentLoaded', () => {

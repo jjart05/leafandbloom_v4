@@ -5,6 +5,7 @@
 <script>
   try {
     if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    document.documentElement.classList.add('lb-js');
     if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
   } catch (e) {}
 </script>
@@ -15,7 +16,7 @@
   <meta name="description" content="Get in touch with Leaf & Bloom. Book a consultation, request a quote, or simply say hello." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css?v=scroll-reveal" />
+  <link rel="stylesheet" href="./css/style.css?v=modern-v1" />
 </head>
 <body>
 
@@ -265,7 +266,7 @@
   </div>
 </footer>
 
-<script src="./js/script.js?v=no-people"></script>
+<script src="./js/script.js?v=modern-v1"></script>
 <script>
 // FAQ accordion
 document.querySelectorAll('.faq-btn').forEach(btn => {

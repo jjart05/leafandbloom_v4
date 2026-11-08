@@ -1,10 +1,62 @@
-.cursor/
-.impeccable/
+# Dependencies & builds
+node_modules/
+dist/
+dist-ssr/
+build/
+.turbo/
+.cache/
+
+# Environment & secrets (keep .env.example)
+.env
+.env.*
+!.env.example
+
+# Credential / key material
+credentials.json
+secrets.json
+serviceAccountKey.json
+**/serviceAccount*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Logs & dumps
+logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.sql
+*.sqlite
+*.db
+*.dump
+backups/
+
+# Vercel / local tooling
+.vercel/
+.vite/
+*.local
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
 .DS_Store
 Thumbs.db
-tmp-*/
-tmp-ig/
-tmp-product-audit/
-.vercel
-.env*
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Agent / design scratch (not required for deploy)
+.cursor/
+.impeccable/
+agent-transcripts/
+
+# Accidental duplicate scaffold (root app is the source of truth)
+leafbloom-app/

@@ -5,6 +5,7 @@
 <script>
   try {
     if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    document.documentElement.classList.add('lb-js');
     if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
   } catch (e) {}
 </script>
@@ -15,7 +16,7 @@
   <meta name="description" content="Browse our premium collection of rare plants, orchids, tropical specimens, and curated floral arrangements." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css?v=plus15" />
+  <link rel="stylesheet" href="./css/style.css?v=modern-v1" />
 </head>
 <body>
 
@@ -117,13 +118,12 @@
 
       <!-- Search + Sort Bar -->
       <div class="search-sort-wrapper">
-        <div style="position:relative;flex:1;min-width:200px;max-width:380px;">
-          <input type="search" id="product-search" placeholder="Search plants…" aria-label="Search products"
-            style="width:100%;padding:0.75rem 1rem 0.75rem 2.75rem;border:1px solid var(--clr-border);border-radius:var(--radius-pill);font-family:var(--font-body);font-size:0.88rem;background:var(--clr-surface);color:var(--clr-text);outline:none;transition:border-color 0.2s;" />
-          <i class="fa-solid fa-magnifying-glass" style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--clr-text-lt);font-size:0.85rem;" aria-hidden="true"></i>
+        <div class="search-field">
+          <i class="fa-solid fa-magnifying-glass search-field__icon" aria-hidden="true"></i>
+          <input type="search" id="product-search" class="search-field__input" placeholder="Search plants…" aria-label="Search products" />
         </div>
-        <div style="display:flex;align-items:center;gap:0.75rem;">
-          <label for="sort-select" style="font-size:0.78rem;color:var(--clr-text-mid);white-space:nowrap;">Sort by</label>
+        <div class="sort-field">
+          <label for="sort-select" class="sort-field__label">Sort by</label>
           <select id="sort-select" aria-label="Sort products">
             <option value="default">Featured</option>
             <option value="price-asc">Price: Low to High</option>
@@ -911,10 +911,9 @@
       </div><!-- /.products-grid -->
 
       <!-- Empty State -->
-      <div id="no-results" style="display:none;text-align:center;padding:4rem 2rem;">
-        <div style="font-size:1rem;margin-bottom:1rem;opacity:0.5;font-family:var(--font-display)">No matches</div>
-        <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:0.5rem;">No plants found</h3>
-        <p style="color:var(--clr-text-mid);font-size:0.9rem;">Try a different search term or filter.</p>
+      <div id="no-results" class="shop-empty" hidden>
+        <h3 class="shop-empty__title">No plants found</h3>
+        <p class="shop-empty__sub">Try a different search term or category filter.</p>
       </div>
 
     </div>
@@ -962,7 +961,7 @@
   </div>
 </footer>
 
-<script src="./js/script.js?v=no-people"></script>
+<script src="./js/script.js?v=modern-v1"></script>
 <script>
 // Product search + sort — smooth filter transitions
 document.addEventListener('DOMContentLoaded', () => {
@@ -1072,7 +1071,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    if (noResults) noResults.style.display = visible.length === 0 ? 'block' : 'none';
+    if (noResults) noResults.hidden = visible.length !== 0;
   }
 
   function filterAndSort(options = {}) {
@@ -1100,7 +1099,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       visible.forEach(card => grid.appendChild(card));
-      if (noResults) noResults.style.display = visible.length === 0 ? 'block' : 'none';
+      if (noResults) noResults.hidden = visible.length !== 0;
       return;
     }
 

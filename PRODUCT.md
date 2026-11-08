@@ -22,7 +22,7 @@ A Cebu-based luxury botanical studio narrative: premium plants, artisan florals,
 
 ## Operating Context
 
-Visited as local static HTML in a modern browser (`index.html` and sibling pages). No build step or server required. Shopping cart and checkout are client-side only. Enquiries are framed through contact forms and a WhatsApp CTA. Currency throughout is PHP (₱).
+Visited as a Vite + React SPA (`npm run dev` locally; production build on Vercel). Shopping cart, wishlist, checkout order requests, and feedback reviews are client-side only (`localStorage`). Enquiries are framed through contact forms and a WhatsApp CTA. Currency throughout is PHP (₱). Checkout never processes a real payment.
 
 ## Capabilities and Constraints
 
@@ -75,7 +75,7 @@ Not real evidence — do not fabricate or harden into claims:
 2. Preserve the Leaf & Bloom identity — name, founder/team, Cebu roots, PHP, and service lineup are durable product facts.
 3. Complete the fictional journey — shopping and services flows should feel coherent end-to-end even without a backend.
 4. Prefer real local assets over invented proof when imagery or people are needed.
-5. Keep the experience browser-native and static-friendly — no requirement for a build toolchain unless explicitly chosen later.
+5. Prefer honest portfolio framing — interactive commerce UX without inventing payment backends or server auth.
 
 ## Accessibility & Inclusion
 

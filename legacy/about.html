@@ -5,6 +5,7 @@
 <script>
   try {
     if (localStorage.getItem('lb_theme') === 'dark') document.documentElement.classList.add('lb-dark-boot');
+    document.documentElement.classList.add('lb-js');
     if (sessionStorage.getItem('lb_page_nav') === '1') document.documentElement.classList.add('lb-skip-loader');
   } catch (e) {}
 </script>
@@ -15,7 +16,7 @@
   <meta name="description" content="Leaf & Bloom is a Cebu botanical studio for plants, florals, and event work across the Philippines." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/style.css?v=about-smooth" />
+  <link rel="stylesheet" href="./css/style.css?v=modern-v1" />
 </head>
 <body>
 
@@ -301,6 +302,6 @@
   </div>
 </footer>
 
-<script src="./js/script.js?v=about-smooth"></script>
+<script src="./js/script.js?v=modern-v1"></script>
 </body>
 </html>

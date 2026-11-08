@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('lb-js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin — Leaf &amp; Bloom Reviews</title>
@@ -14,16 +15,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green:      #3D5A3E;
-      --green-lt:   #6B8F71;
-      --gold:       #C9A84C;
-      --surface:    #FAFAF7;
-      --border:     rgba(61,90,62,0.12);
-      --text:       #1C1C1A;
-      --text-mid:   #5A5A55;
-      --text-lt:    #9A9A94;
+      --green:      #2c3a30;
+      --green-lt:   #5f735f;
+      --gold:       #c4a4a8;
+      --surface:    #faf8f3;
+      --border:     rgba(44,58,48,0.12);
+      --text:       #1a1c18;
+      --text-mid:   #5a554c;
+      --text-lt:    #7a7468;
       --radius:     12px;
-      --shadow:     0 4px 24px rgba(0,0,0,0.07);
+      --shadow:     0 4px 16px rgba(26,28,24,0.06);
     }
 
     body {
@@ -514,8 +515,8 @@
 <script>
 (function () {
   // ── Config ──────────────────────────────────────────────
-  // Change this password to whatever you want
-  const ADMIN_PASSWORD = 'leafbloom2025';
+  // Legacy static admin is retired. Use the React /admin route with
+  // server-side ADMIN_PASSWORD + ADMIN_SESSION_SECRET instead.
   const SESSION_KEY    = 'lb_admin_auth';
   const REVIEWS_KEY    = 'lb_reviews';
 
@@ -549,14 +550,9 @@
   }
 
   function attemptLogin() {
-    if (passInput.value === ADMIN_PASSWORD) {
-      lockError.textContent = '';
-      unlock();
-    } else {
-      lockError.textContent = 'Incorrect password. Please try again.';
-      passInput.value = '';
-      passInput.focus();
-    }
+    lockError.textContent =
+      'This legacy admin page is disabled. Open /admin on the Vite app instead.';
+    passInput.value = '';
   }
 
   // Auto-unlock if already authenticated this session

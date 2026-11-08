@@ -115,6 +115,13 @@ function updateBadges() {
   document.querySelectorAll('.cart-badge').forEach(b => {
     b.textContent = count;
     b.classList.toggle('hidden', count === 0);
+    if (count > 0 && !prefersReducedMotion()) {
+      b.classList.remove('bump');
+      // Force reflow so repeated adds re-trigger the bump
+      void b.offsetWidth;
+      b.classList.add('bump');
+      setTimeout(() => b.classList.remove('bump'), 450);
+    }
   });
 }
 
@@ -133,9 +140,22 @@ function addToCart(id, qty = 1) {
 }
 
 function animateCartBtn() {
+  if (prefersReducedMotion()) return;
   document.querySelectorAll('.btn-cart').forEach(btn => {
     btn.classList.add('pulse');
     setTimeout(() => btn.classList.remove('pulse'), 500);
+  });
+}
+
+/* ── Product image fade-in (lazy + cache) ── */
+function markProductImagesLoaded() {
+  document.querySelectorAll('.product-img-wrap img, .modal-img').forEach(img => {
+    const mark = () => img.classList.add('is-loaded');
+    if (img.complete && img.naturalWidth > 0) mark();
+    else {
+      img.addEventListener('load', mark, { once: true });
+      img.addEventListener('error', mark, { once: true });
+    }
   });
 }
 
@@ -567,6 +587,12 @@ function initReveal() {
 
   els.forEach(el => {
     if (el.classList.contains('revealed')) return;
+    const r = el.getBoundingClientRect();
+    /* Above-the-fold copy must not sit invisible waiting on IO + rootMargin */
+    if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
+      requestAnimationFrame(() => el.classList.add('revealed'));
+      return;
+    }
     obs.observe(el);
   });
 }
@@ -1429,6 +1455,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceBooking();
   updateBadges();
   updateCartDrawer();
+  markProductImagesLoaded();
 
   // Keyboard ESC closes modals
   document.addEventListener('keydown', e => {
