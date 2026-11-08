@@ -2,18 +2,22 @@ import { Link } from 'react-router-dom'
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-[var(--lb-border)] bg-[var(--lb-surface-2)]/50">
-      <div className="container-lb grid gap-10 py-14 md:grid-cols-4">
+    <footer className="mt-10 border-t border-[var(--lb-border)] bg-[var(--lb-surface-2)]/50">
+      <div className="container-lb grid gap-6 py-8 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
         <div className="md:col-span-1">
-          <p className="font-display text-2xl text-[var(--lb-ink)]">Leaf &amp; Bloom</p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--lb-earth)]">
+          <p className="font-display text-xl text-[var(--lb-ink)]">
+            Leaf &amp; Bloom
+          </p>
+          <p className="mt-2 max-w-xs text-sm leading-snug text-[var(--lb-earth)]">
             Botanical studio in Cebu for plants, florals, and event styling —
             priced in pesos.
           </p>
         </div>
         <div>
-          <p className="mb-3 text-sm font-medium text-[var(--lb-ink)]">Navigate</p>
-          <ul className="space-y-2 text-sm">
+          <p className="mb-2 text-sm font-medium text-[var(--lb-ink)]">
+            Navigate
+          </p>
+          <ul className="space-y-1 text-sm">
             <li>
               <Link to="/" className="lb-link-muted">
                 Home
@@ -52,8 +56,10 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="mb-3 text-sm font-medium text-[var(--lb-ink)]">Collections</p>
-          <ul className="space-y-2 text-sm">
+          <p className="mb-2 text-sm font-medium text-[var(--lb-ink)]">
+            Collections
+          </p>
+          <ul className="space-y-1 text-sm">
             <li>
               <Link to="/shop?category=tropical" className="lb-link-muted">
                 Tropical Plants
@@ -77,8 +83,8 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="mb-3 text-sm font-medium text-[var(--lb-ink)]">Visit</p>
-          <ul className="space-y-2 text-sm text-[var(--lb-earth)]">
+          <p className="mb-2 text-sm font-medium text-[var(--lb-ink)]">Visit</p>
+          <ul className="space-y-1 text-sm text-[var(--lb-earth)]">
             <li>Buhisan, Dulhugan, Cebu City</li>
             <li>
               <a href="tel:+639171234567" className="lb-link-muted">
@@ -94,8 +100,10 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="container-lb flex flex-col gap-2 border-t border-[var(--lb-border)] py-5 text-xs text-[var(--lb-muted)] sm:flex-row sm:justify-between">
-        <span>© {new Date().getFullYear()} Leaf &amp; Bloom. Portfolio storefront.</span>
+      <div className="container-lb flex flex-col gap-1 border-t border-[var(--lb-border)] py-3 text-xs text-[var(--lb-muted)] sm:flex-row sm:justify-between">
+        <span>
+          © {new Date().getFullYear()} Leaf &amp; Bloom. Portfolio storefront.
+        </span>
         <Link to="/admin" className="lb-link-muted">
           Admin
         </Link>
