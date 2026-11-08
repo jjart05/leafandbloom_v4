@@ -6,3 +6,5 @@ Thumbs.db
 tmp-*/
 tmp-ig/
 tmp-product-audit/
+.vercel
+.env*
