@@ -36,7 +36,7 @@ export const PRODUCTS: Product[] = [
     "price": 1200,
     "badge": "Best Seller",
     "badgeClass": "gold",
-    "img": "https://images.unsplash.com/photo-1525498128493-380d1990a112?q=80&w=435&auto=format&fit=crop",
+    "img": "/images/products/1.jpg",
     "desc": "Iconic split-leaf philodendron. A statement piece for any interior."
   },
   {
@@ -46,7 +46,7 @@ export const PRODUCTS: Product[] = [
     "price": 3500,
     "badge": "New",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1545239705-1564e58b9e4a?q=80&w=687&auto=format&fit=crop",
+    "img": "/images/products/2.jpg",
     "desc": "Architectural silhouette with dramatic, glossy fiddle-shaped leaves."
   },
   {
@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
     "price": 2800,
     "badge": "",
     "badgeClass": "",
-    "img": "https://plus.unsplash.com/premium_photo-1676316337647-65c35c441c9d?q=80&w=687&auto=format&fit=crop",
+    "img": "/images/products/3.jpg",
     "desc": "Bold, tropical foliage that transforms any corner into a lush retreat."
   },
   {
@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
     "price": 2200,
     "badge": "Sale",
     "badgeClass": "sale",
-    "img": "https://images.unsplash.com/photo-1710524784485-5c77ae822ecc?q=80&w=1170&auto=format&fit=crop",
+    "img": "/images/products/4.jpg",
     "desc": "White phalaenopsis with cascading blooms.",
     "oldPrice": 2800
   },
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     "price": 1800,
     "badge": "Premium",
     "badgeClass": "gold",
-    "img": "https://images.unsplash.com/photo-1632906379687-355e24798632?q=80&w=1073&auto=format&fit=crop",
+    "img": "/images/products/5.jpg",
     "desc": "Velvety heart-shaped blooms in soft blush pink."
   },
   {
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     "price": 1600,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1755027619393-65e8de9c1b31?q=80&w=720&auto=format&fit=crop",
+    "img": "/images/products/6.jpg",
     "desc": "Rich lavender clusters that bloom abundantly with minimal care."
   },
   {
@@ -97,7 +97,7 @@ export const PRODUCTS: Product[] = [
     "price": 980,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1459156212016-c812468e2115?q=80&w=705&auto=format&fit=crop",
+    "img": "/images/products/7.jpg",
     "desc": "A sculptural trio of rare succulents in hand-thrown ceramic pots."
   },
   {
@@ -107,7 +107,7 @@ export const PRODUCTS: Product[] = [
     "price": 2400,
     "badge": "New",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1604591251652-80897be7c245?q=80&w=735&auto=format&fit=crop",
+    "img": "/images/products/8.jpg",
     "desc": "Gold-framed geometric terrarium with handpicked succulents."
   },
   {
@@ -117,7 +117,7 @@ export const PRODUCTS: Product[] = [
     "price": 750,
     "badge": "",
     "badgeClass": "",
-    "img": "https://plus.unsplash.com/premium_photo-1770836554434-75c5c88914ad?q=80&w=880&auto=format&fit=crop",
+    "img": "/images/products/9.jpg",
     "desc": "Lush, arching fronds that bring soft, romantic texture."
   },
   {
@@ -127,7 +127,7 @@ export const PRODUCTS: Product[] = [
     "price": 450,
     "badge": "Popular",
     "badgeClass": "gold",
-    "img": "https://images.unsplash.com/photo-1763060819223-b92eb0ca6e4d?q=80&w=1173&auto=format&fit=crop",
+    "img": "/images/products/10.jpg",
     "desc": "Trailing golden-green pothos for shelves and hangers."
   },
   {
@@ -137,7 +137,7 @@ export const PRODUCTS: Product[] = [
     "price": 3800,
     "badge": "Luxury",
     "badgeClass": "gold",
-    "img": "https://plus.unsplash.com/premium_photo-1674581211991-bd10fa5137bf?q=80&w=880&auto=format&fit=crop",
+    "img": "/images/products/11.jpg",
     "desc": "Our flagship arrangement — lush, seasonal blooms, hand-tied."
   },
   {
@@ -147,7 +147,7 @@ export const PRODUCTS: Product[] = [
     "price": 2600,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1533616688419-b7a585564566?w=500&auto=format&fit=crop",
+    "img": "/images/products/12.jpg",
     "desc": "Loose meadow blooms and branches in a vase."
   },
   {
@@ -157,7 +157,7 @@ export const PRODUCTS: Product[] = [
     "price": 18000,
     "badge": "Rare",
     "badgeClass": "rare",
-    "img": "https://images.unsplash.com/photo-1684738054008-6fcab69c48b0?w=500&auto=format&fit=crop",
+    "img": "/images/products/13.jpg",
     "desc": "Crown jewel of plant collectors. Striking white-marbled foliage."
   },
   {
@@ -167,7 +167,7 @@ export const PRODUCTS: Product[] = [
     "price": 8500,
     "badge": "Rare",
     "badgeClass": "rare",
-    "img": "https://images.unsplash.com/photo-1666071016865-9a2c93dd880c?w=500&auto=format&fit=crop",
+    "img": "/images/products/14.jpg",
     "desc": "Extraordinarily exotic — dramatic black blooms with tendrils."
   },
   {
@@ -177,7 +177,7 @@ export const PRODUCTS: Product[] = [
     "price": 890,
     "badge": "Popular",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/2123482/pexels-photo-2123482.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "img": "/images/products/15.jpeg",
     "desc": "Upright yellow-edged leaves. Handles low light and infrequent watering."
   },
   {
@@ -187,7 +187,7 @@ export const PRODUCTS: Product[] = [
     "price": 650,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/7349006/pexels-photo-7349006.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "img": "/images/products/16.jpeg",
     "desc": "Compact Sansevieria Hahnii — a desk-size plant for bright, filtered light."
   },
   {
@@ -197,7 +197,7 @@ export const PRODUCTS: Product[] = [
     "price": 1250,
     "badge": "New",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/7862172/pexels-photo-7862172.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "img": "/images/products/17.jpeg",
     "desc": "Glossy foliage with white spathes. Prefers shade and steady moisture."
   },
   {
@@ -207,7 +207,7 @@ export const PRODUCTS: Product[] = [
     "price": 1650,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1491147334573-44cbb4602074?q=80&w=1200&auto=format&fit=crop",
+    "img": "/images/products/18.jpg",
     "desc": "Broad silver-striped leaves. Best in humid rooms away from direct sun."
   },
   {
@@ -217,7 +217,7 @@ export const PRODUCTS: Product[] = [
     "price": 520,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1572688484438-313a6e50c333?q=80&w=1200&auto=format&fit=crop",
+    "img": "/images/products/19.jpg",
     "desc": "Arching variegated leaves that send out plantlets. Easy shelf plant."
   },
   {
@@ -227,7 +227,7 @@ export const PRODUCTS: Product[] = [
     "price": 550,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "img": "/images/products/20.jpeg",
     "desc": "Bright chartreuse trailing vines for shelves, hangers, or cabinets."
   },
   {
@@ -237,7 +237,7 @@ export const PRODUCTS: Product[] = [
     "price": 480,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?q=80&w=1200&auto=format&fit=crop",
+    "img": "/images/products/21.jpg",
     "desc": "Speckled rosette succulent. Water sparingly; bright light preferred."
   },
   {
@@ -247,7 +247,7 @@ export const PRODUCTS: Product[] = [
     "price": 690,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1200&auto=format&fit=crop",
+    "img": "/images/products/22.jpg",
     "desc": "Tall ribbed cactus for sunny windowsills. Minimal weekly care."
   },
   {
@@ -257,7 +257,7 @@ export const PRODUCTS: Product[] = [
     "price": 3200,
     "badge": "Featured",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=1200&auto=format&fit=crop",
+    "img": "/images/products/23.jpg",
     "desc": "Sculptural bonsai-form ficus with thick roots and dense canopy."
   },
   {
@@ -267,7 +267,7 @@ export const PRODUCTS: Product[] = [
     "price": 1450,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
+    "img": "/images/products/24.jpg",
     "desc": "Thick waxy leaves on a clean stem. Bright, indirect light indoors."
   },
   {
@@ -277,7 +277,7 @@ export const PRODUCTS: Product[] = [
     "price": 1350,
     "badge": "New",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/6208086/pexels-photo-6208086.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/25.jpeg",
     "desc": "Slender red-edged leaves on a tall cane. Good for bright corners."
   },
   {
@@ -287,7 +287,7 @@ export const PRODUCTS: Product[] = [
     "price": 2100,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/3125195/pexels-photo-3125195.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/26.jpeg",
     "desc": "Feathery fronds that soften living rooms. Prefers bright, filtered light."
   },
   {
@@ -297,7 +297,7 @@ export const PRODUCTS: Product[] = [
     "price": 780,
     "badge": "Popular",
     "badgeClass": "gold",
-    "img": "https://images.pexels.com/photos/4503273/pexels-photo-4503273.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/27.jpeg",
     "desc": "Round coin-like leaves on upright stems. Easy desk or shelf plant."
   },
   {
@@ -307,7 +307,7 @@ export const PRODUCTS: Product[] = [
     "price": 620,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/28.jpeg",
     "desc": "Trailing bead-like foliage for hanging pots. Water sparingly."
   },
   {
@@ -317,7 +317,7 @@ export const PRODUCTS: Product[] = [
     "price": 540,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/1022922/pexels-photo-1022922.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/29.jpeg",
     "desc": "Compact striped rosettes. Ideal for sunny windowsills."
   },
   {
@@ -327,7 +327,7 @@ export const PRODUCTS: Product[] = [
     "price": 890,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?q=80&w=1400&auto=format&fit=crop",
+    "img": "/images/products/30.jpg",
     "desc": "Full, feathery foliage in a clean pot. Likes humidity and shade."
   },
   {
@@ -337,7 +337,7 @@ export const PRODUCTS: Product[] = [
     "price": 1750,
     "badge": "Featured",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/31.jpeg",
     "desc": "Lush layered fronds with rich texture. A sculptural greenery piece."
   },
   {
@@ -347,7 +347,7 @@ export const PRODUCTS: Product[] = [
     "price": 1950,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1710524784485-5c77ae822ecc?q=80&w=1400&auto=format&fit=crop",
+    "img": "/images/products/32.jpg",
     "desc": "White orchid blooms on graceful stems. Gift-ready potting."
   },
   {
@@ -357,7 +357,7 @@ export const PRODUCTS: Product[] = [
     "price": 1680,
     "badge": "New",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/1084189/pexels-photo-1084189.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/33.jpeg",
     "desc": "Bright oncidium sprays with lively yellow petals."
   },
   {
@@ -367,7 +367,7 @@ export const PRODUCTS: Product[] = [
     "price": 2900,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/34.jpeg",
     "desc": "Clean white blooms hand-tied for tables, vows, and quiet rooms."
   },
   {
@@ -377,7 +377,7 @@ export const PRODUCTS: Product[] = [
     "price": 2450,
     "badge": "Popular",
     "badgeClass": "gold",
-    "img": "https://images.pexels.com/photos/1470171/pexels-photo-1470171.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/35.jpeg",
     "desc": "Loose seasonal wildflowers in a studio vase. Soft and informal."
   },
   {
@@ -387,7 +387,7 @@ export const PRODUCTS: Product[] = [
     "price": 2200,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/36.jpeg",
     "desc": "Studio greenery set with lasting foliage — clean table arrangement."
   },
   {
@@ -397,7 +397,7 @@ export const PRODUCTS: Product[] = [
     "price": 2800,
     "badge": "Rare",
     "badgeClass": "rare",
-    "img": "https://images.pexels.com/photos/6208087/pexels-photo-6208087.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "img": "/images/products/37.jpeg",
     "desc": "Dramatic sculptural leaves. Loves humidity and bright shade."
   },
   {
@@ -407,7 +407,7 @@ export const PRODUCTS: Product[] = [
     "price": 4200,
     "badge": "Rare",
     "badgeClass": "rare",
-    "img": "https://images.unsplash.com/photo-1632906379687-355e24798632?q=80&w=1400&auto=format&fit=crop",
+    "img": "/images/products/38.jpg",
     "desc": "Glossy heart-shaped spathes with bold foliage. Collector favorite."
   },
   {
@@ -417,7 +417,7 @@ export const PRODUCTS: Product[] = [
     "price": 720,
     "badge": "",
     "badgeClass": "",
-    "img": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=1400&auto=format&fit=crop",
+    "img": "/images/products/39.jpg",
     "desc": "Compact leafy plant in a clean pot. Easy gift for shelves."
   }
 ] as Product[]
